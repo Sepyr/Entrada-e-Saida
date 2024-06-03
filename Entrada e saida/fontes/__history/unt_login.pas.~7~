@@ -1,0 +1,68 @@
+unit unt_login;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Buttons, Vcl.StdCtrls;
+
+type
+  Tfrm_login = class(TForm)
+    edt_user: TEdit;
+    edt_senha: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    SpeedButton1: TSpeedButton;
+    SpeedButton2: TSpeedButton;
+    procedure SpeedButton1Click(Sender: TObject);
+    procedure SpeedButton2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frm_login: Tfrm_login;
+
+implementation
+
+{$R *.dfm}
+
+uses unt_inicio, unt_dm, unt_cadastro_pedagogas;
+
+procedure Tfrm_login.SpeedButton1Click(Sender: TObject);
+begin
+with dtm.cadastro_pedagogas do
+begin
+  close;
+  sql.clear;
+  sql.add('SELECT * FROM sistema.pedagogas WHERE usuario= :usuario and senha= :senha');
+  parambyname('usuario').VALUE:= edt_user.text;
+   parambyname('senha').VALUE:= edt_senha.text;
+   open;
+   if(RecordCount)>0 then 
+   begin
+   frm_inicio.Show;
+frm_login.visible:=FALSE;
+   end
+   else
+   begin
+     ShowMessage('Usuario ou senha invalidos');
+     edt_senha.TEXT:='';
+     edt_user.SetFocus;
+   end;
+end;
+
+
+
+
+
+end;
+
+procedure Tfrm_login.SpeedButton2Click(Sender: TObject);
+begin
+frm_cadastro_pedagogas.Show;
+end;
+
+end.

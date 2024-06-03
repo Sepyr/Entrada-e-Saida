@@ -1,0 +1,18 @@
+program Entrada_e_saida;
+
+uses
+  Vcl.Forms,
+  unt_login in 'fontes\unt_login.pas' {frm_login},
+  unt_dm in 'fontes\unt_dm.pas' {DataModule2: TDataModule},
+  unt_inicio in 'fontes\unt_inicio.pas' {frm_inicio};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(Tfrm_login, frm_login);
+  Application.CreateForm(TDataModule2, DataModule2);
+  Application.CreateForm(Tfrm_inicio, frm_inicio);
+  Application.Run;
+end.

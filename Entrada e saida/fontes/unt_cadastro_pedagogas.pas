@@ -1,0 +1,54 @@
+unit unt_cadastro_pedagogas;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Data.DB, Vcl.Grids,
+  Vcl.DBGrids, Vcl.Mask, Vcl.DBCtrls, Vcl.DBActns, System.Actions, Vcl.ActnList,
+  Vcl.PlatformDefaultStyleActnCtrls, Vcl.ActnMan, Vcl.Buttons;
+
+type
+  Tfrm_cadastro_pedagogas = class(TForm)
+    SpeedButton1: TSpeedButton;
+    SpeedButton2: TSpeedButton;
+    SpeedButton3: TSpeedButton;
+    SpeedButton4: TSpeedButton;
+    SpeedButton5: TSpeedButton;
+    ActionManager1: TActionManager;
+    DatasetInsert1: TDataSetInsert;
+    DatasetDelete1: TDataSetDelete;
+    DatasetEdit1: TDataSetEdit;
+    DatasetPost1: TDataSetPost;
+    DatasetCancel1: TDataSetCancel;
+    Label1: TLabel;
+    DBEdit1: TDBEdit;
+    Label2: TLabel;
+    DBEdit2: TDBEdit;
+    Label3: TLabel;
+    DBEdit3: TDBEdit;
+    DBGrid1: TDBGrid;
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frm_cadastro_pedagogas: Tfrm_cadastro_pedagogas;
+
+implementation
+
+{$R *.dfm}
+
+uses unt_login, unt_dm;
+
+procedure Tfrm_cadastro_pedagogas.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+frm_login.visible:=TRUE;
+frm_login.Show;
+end;
+
+end.
