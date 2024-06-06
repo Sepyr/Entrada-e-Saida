@@ -1,7 +1,7 @@
 object frm_cadastro_pedagogas: Tfrm_cadastro_pedagogas
   Left = 0
   Top = 0
-  Caption = 'Cadastro'
+  Caption = 'Cadastro Usuarios'
   ClientHeight = 472
   ClientWidth = 806
   Color = clBtnFace

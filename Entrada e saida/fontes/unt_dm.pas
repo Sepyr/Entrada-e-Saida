@@ -43,6 +43,12 @@ type
     entradasjustificativa: TStringField;
     entradasAluno: TIntegerField;
     entradasPedagoga: TIntegerField;
+    cadastro_responsaveis: TFDQuery;
+    ds_cadastro_responsaveis: TDataSource;
+    cadastro_responsaveisnome: TStringField;
+    cadastro_responsaveistelefone: TStringField;
+    cadastro_responsaveisid: TFDAutoIncField;
+    cadastro_responsaveiscpf: TStringField;
   private
     { Private declarations }
   public

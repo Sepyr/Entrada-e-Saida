@@ -3,7 +3,6 @@ object dtm: Tdtm
   Height = 618
   Width = 960
   object login: TFDQuery
-    Active = True
     Connection = conexao
     SQL.Strings = (
       'SELECT * FROM sistema.pedagogas')
@@ -41,18 +40,20 @@ object dtm: Tdtm
       'DriverID=mySQL')
     Connected = True
     LoginPrompt = False
-    Left = 16
-    Top = 48
+    Left = 144
+    Top = 88
   end
   object FDGUIxWaitCursor1: TFDGUIxWaitCursor
     Provider = 'Forms'
-    Left = 280
-    Top = 32
+    Left = 408
+    Top = 72
   end
   object FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink
-    VendorLib = 'C:\Users\ALUNO21\Music\Entrada e saida\fontes\libmysql.dll'
-    Left = 104
-    Top = 8
+    VendorLib = 
+      'C:\Users\ALUNO21\Music\Entrada-e-Saida\Entrada e saida\fontes\li' +
+      'bmysql.dll'
+    Left = 232
+    Top = 48
   end
   object ds_login: TDataSource
     DataSet = login
@@ -60,7 +61,6 @@ object dtm: Tdtm
     Top = 272
   end
   object cadastro_pedagogas: TFDQuery
-    Active = True
     Connection = conexao
     SQL.Strings = (
       'SELECT * FROM sistema.pedagogas')
@@ -71,6 +71,7 @@ object dtm: Tdtm
       FieldName = 'id'
       Origin = 'id'
       ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
     end
     object cadastro_pedagogasnome: TStringField
       DisplayWidth = 21
@@ -99,7 +100,6 @@ object dtm: Tdtm
     Top = 280
   end
   object saidas: TFDQuery
-    Active = True
     Connection = conexao
     SQL.Strings = (
       'SELECT * FROM saidas')
@@ -109,6 +109,7 @@ object dtm: Tdtm
       FieldName = 'id'
       Origin = 'id'
       ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
     end
     object saidasdata: TDateField
       FieldName = 'data'
@@ -143,7 +144,6 @@ object dtm: Tdtm
     Top = 320
   end
   object entradas: TFDQuery
-    Active = True
     Connection = conexao
     SQL.Strings = (
       'SELECT * FROM entradas')
@@ -153,6 +153,7 @@ object dtm: Tdtm
       FieldName = 'id'
       Origin = 'id'
       ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
     end
     object entradasdata: TDateField
       FieldName = 'data'
@@ -185,5 +186,43 @@ object dtm: Tdtm
     DataSet = entradas
     Left = 296
     Top = 304
+  end
+  object cadastro_responsaveis: TFDQuery
+    Active = True
+    Connection = conexao
+    SQL.Strings = (
+      'SELECT * FROM responsaveis')
+    Left = 696
+    Top = 264
+    object cadastro_responsaveisnome: TStringField
+      FieldName = 'nome'
+      Origin = 'nome'
+      Required = True
+      Size = 80
+    end
+    object cadastro_responsaveistelefone: TStringField
+      FieldName = 'telefone'
+      Origin = 'telefone'
+      Required = True
+      EditMask = '!\(99\)00000-0000;1;_'
+      Size = 14
+    end
+    object cadastro_responsaveisid: TFDAutoIncField
+      FieldName = 'id'
+      Origin = 'id'
+      ProviderFlags = [pfInWhere, pfInKey]
+    end
+    object cadastro_responsaveiscpf: TStringField
+      FieldName = 'cpf'
+      Origin = 'cpf'
+      Required = True
+      EditMask = '000\.000\.000\-00;1;_'
+      Size = 11
+    end
+  end
+  object ds_cadastro_responsaveis: TDataSource
+    DataSet = cadastro_responsaveis
+    Left = 680
+    Top = 336
   end
 end

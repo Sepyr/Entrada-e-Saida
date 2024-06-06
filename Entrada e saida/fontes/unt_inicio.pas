@@ -12,9 +12,11 @@ type
     SpeedButton2: TSpeedButton;
     Image1: TImage;
     Image2: TImage;
+    SpeedButton3: TSpeedButton;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure SpeedButton2Click(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
+    procedure SpeedButton3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -28,7 +30,7 @@ implementation
 
 {$R *.dfm}
 
-uses unt_login, unt_atrasos, unt_saidas;
+uses unt_login, unt_atrasos, unt_saidas, unt_cadastro_alunos;
 
 procedure Tfrm_inicio.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
@@ -45,6 +47,11 @@ procedure Tfrm_inicio.SpeedButton2Click(Sender: TObject);
 begin
 frm_atrasos.Show;
 
+end;
+
+procedure Tfrm_inicio.SpeedButton3Click(Sender: TObject);
+begin
+frm_cadastroaluno.Show;
 end;
 
 end.

@@ -8,7 +8,9 @@ uses
   unt_cadastro_pedagogas in 'fontes\unt_cadastro_pedagogas.pas' {frm_cadastro_pedagogas},
   unt_adm in 'fontes\unt_adm.pas' {frm_adm},
   unt_atrasos in 'fontes\unt_atrasos.pas' {frm_atrasos},
-  unt_saidas in 'fontes\unt_saidas.pas' {frm_saida};
+  unt_saidas in 'fontes\unt_saidas.pas' {frm_saida},
+  unt_cadastro_alunos in 'fontes\unt_cadastro_alunos.pas' {frm_cadastroaluno},
+  unt_cadastro_responsaveis in 'fontes\unt_cadastro_responsaveis.pas' {frm_cadastro_responsaveis};
 
 {$R *.res}
 
@@ -22,5 +24,7 @@ begin
   Application.CreateForm(Tfrm_adm, frm_adm);
   Application.CreateForm(Tfrm_atrasos, frm_atrasos);
   Application.CreateForm(Tfrm_saida, frm_saida);
+  Application.CreateForm(Tfrm_cadastroaluno, frm_cadastroaluno);
+  Application.CreateForm(Tfrm_cadastro_responsaveis, frm_cadastro_responsaveis);
   Application.Run;
 end.

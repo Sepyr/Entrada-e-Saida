@@ -12290,4 +12290,11 @@ object frm_inicio: Tfrm_inicio
       0000}
     Stretch = True
   end
+  object SpeedButton3: TSpeedButton
+    Left = 32
+    Top = 384
+    Width = 135
+    Height = 46
+    OnClick = SpeedButton3Click
+  end
 end
