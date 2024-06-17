@@ -12291,7 +12291,7 @@ object frm_inicio: Tfrm_inicio
     Stretch = True
   end
   object SpeedButton3: TSpeedButton
-    Left = 32
+    Left = 42
     Top = 384
     Width = 135
     Height = 46

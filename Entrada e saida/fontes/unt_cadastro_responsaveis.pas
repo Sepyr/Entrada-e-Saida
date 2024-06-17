@@ -10,13 +10,6 @@ uses
 
 type
   Tfrm_cadastro_responsaveis = class(TForm)
-    Label1: TLabel;
-    DBEdit1: TDBEdit;
-    Label2: TLabel;
-    DBEdit2: TDBEdit;
-    Label3: TLabel;
-    DBEdit3: TDBEdit;
-    DBGrid1: TDBGrid;
     SpeedButton1: TSpeedButton;
     SpeedButton2: TSpeedButton;
     SpeedButton3: TSpeedButton;
@@ -28,6 +21,13 @@ type
     DatasetEdit1: TDataSetEdit;
     DatasetPost1: TDataSetPost;
     DatasetCancel1: TDataSetCancel;
+    DBGrid1: TDBGrid;
+    Label1: TLabel;
+    DBEdit1: TDBEdit;
+    Label2: TLabel;
+    DBEdit2: TDBEdit;
+    Label3: TLabel;
+    DBEdit3: TDBEdit;
     procedure DBEdit2Click(Sender: TObject);
     procedure DBEdit3Click(Sender: TObject);
     procedure DBEdit2Enter(Sender: TObject);

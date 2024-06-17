@@ -3,7 +3,7 @@ object frm_cadastro_responsaveis: Tfrm_cadastro_responsaveis
   Top = 0
   Caption = 'Cadastro Responsaveis'
   ClientHeight = 393
-  ClientWidth = 680
+  ClientWidth = 452
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11,32 +11,9 @@ object frm_cadastro_responsaveis: Tfrm_cadastro_responsaveis
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poDesktopCenter
   PixelsPerInch = 96
   TextHeight = 13
-  object Label1: TLabel
-    Left = 24
-    Top = 16
-    Width = 26
-    Height = 13
-    Caption = 'nome'
-    FocusControl = DBEdit1
-  end
-  object Label2: TLabel
-    Left = 24
-    Top = 56
-    Width = 40
-    Height = 13
-    Caption = 'telefone'
-    FocusControl = DBEdit2
-  end
-  object Label3: TLabel
-    Left = 24
-    Top = 96
-    Width = 15
-    Height = 13
-    Caption = 'cpf'
-    FocusControl = DBEdit3
-  end
   object SpeedButton1: TSpeedButton
     Left = 40
     Top = 168
@@ -77,49 +54,38 @@ object frm_cadastro_responsaveis: Tfrm_cadastro_responsaveis
     Action = DatasetCancel1
     Caption = 'Cancelar'
   end
-  object DBEdit1: TDBEdit
-    Left = 24
-    Top = 35
-    Width = 276
-    Height = 21
-    DataField = 'nome'
-    DataSource = dtm.ds_cadastro_responsaveis
-    TabOrder = 0
+  object Label1: TLabel
+    Left = 18
+    Top = 8
+    Width = 26
+    Height = 13
+    Caption = 'nome'
+    FocusControl = DBEdit1
   end
-  object DBEdit2: TDBEdit
-    Left = 24
-    Top = 72
-    Width = 180
-    Height = 21
-    DataField = 'telefone'
-    DataSource = dtm.ds_cadastro_responsaveis
-    MaxLength = 14
-    ParentShowHint = False
-    ShowHint = False
-    TabOrder = 1
-    OnClick = DBEdit2Click
-    OnEnter = DBEdit2Enter
+  object Label2: TLabel
+    Left = 18
+    Top = 48
+    Width = 40
+    Height = 13
+    Caption = 'telefone'
+    FocusControl = DBEdit2
   end
-  object DBEdit3: TDBEdit
-    Left = 24
-    Top = 115
-    Width = 147
-    Height = 21
-    DataField = 'cpf'
-    DataSource = dtm.ds_cadastro_responsaveis
-    MaxLength = 14
-    TabOrder = 2
-    OnClick = DBEdit3Click
-    OnEnter = DBEdit3Enter
+  object Label3: TLabel
+    Left = 18
+    Top = 88
+    Width = 15
+    Height = 13
+    Caption = 'cpf'
+    FocusControl = DBEdit3
   end
   object DBGrid1: TDBGrid
-    Left = 40
-    Top = 227
-    Width = 601
+    Left = 24
+    Top = 228
+    Width = 369
     Height = 120
     DataSource = dtm.ds_cadastro_responsaveis
     Options = [dgTitles, dgIndicator, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
-    TabOrder = 3
+    TabOrder = 0
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
@@ -131,13 +97,12 @@ object frm_cadastro_responsaveis: Tfrm_cadastro_responsaveis
         Expanded = False
         FieldName = 'id'
         Title.Alignment = taCenter
-        Title.Caption = 'Matricula'
+        Title.Caption = 'C'#243'digo'
         Title.Font.Charset = DEFAULT_CHARSET
         Title.Font.Color = clWindowText
         Title.Font.Height = -11
         Title.Font.Name = 'Tahoma'
         Title.Font.Style = [fsBold]
-        Width = 69
         Visible = True
       end
       item
@@ -151,29 +116,25 @@ object frm_cadastro_responsaveis: Tfrm_cadastro_responsaveis
         Title.Font.Height = -11
         Title.Font.Name = 'Tahoma'
         Title.Font.Style = [fsBold]
-        Width = 198
         Visible = True
       end
       item
-        Alignment = taCenter
         Expanded = False
-        FieldName = 'usuario'
+        FieldName = 'telefone'
         Title.Alignment = taCenter
-        Title.Caption = 'Usu'#225'rio'
+        Title.Caption = 'Telefone'
         Title.Font.Charset = DEFAULT_CHARSET
         Title.Font.Color = clWindowText
         Title.Font.Height = -11
         Title.Font.Name = 'Tahoma'
         Title.Font.Style = [fsBold]
-        Width = 150
         Visible = True
       end
       item
-        Alignment = taCenter
         Expanded = False
-        FieldName = 'senha'
+        FieldName = 'cpf'
         Title.Alignment = taCenter
-        Title.Caption = 'Senha'
+        Title.Caption = 'CPF'
         Title.Font.Charset = DEFAULT_CHARSET
         Title.Font.Color = clWindowText
         Title.Font.Height = -11
@@ -182,8 +143,37 @@ object frm_cadastro_responsaveis: Tfrm_cadastro_responsaveis
         Visible = True
       end>
   end
+  object DBEdit1: TDBEdit
+    Left = 18
+    Top = 24
+    Width = 160
+    Height = 21
+    DataField = 'nome'
+    DataSource = dtm.ds_cadastro_responsaveis
+    TabOrder = 1
+  end
+  object DBEdit2: TDBEdit
+    Left = 18
+    Top = 64
+    Width = 221
+    Height = 21
+    DataField = 'telefone'
+    DataSource = dtm.ds_cadastro_responsaveis
+    MaxLength = 14
+    TabOrder = 2
+  end
+  object DBEdit3: TDBEdit
+    Left = 18
+    Top = 104
+    Width = 171
+    Height = 21
+    DataField = 'cpf'
+    DataSource = dtm.ds_cadastro_responsaveis
+    MaxLength = 14
+    TabOrder = 3
+  end
   object ActionManager1: TActionManager
-    Left = 536
+    Left = 360
     Top = 40
     StyleName = 'Platform Default'
     object DatasetInsert1: TDataSetInsert

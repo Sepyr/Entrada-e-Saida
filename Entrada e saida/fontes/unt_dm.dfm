@@ -3,11 +3,12 @@ object dtm: Tdtm
   Height = 618
   Width = 960
   object login: TFDQuery
+    Active = True
     Connection = conexao
     SQL.Strings = (
       'SELECT * FROM sistema.pedagogas')
-    Left = 64
-    Top = 208
+    Left = 16
+    Top = 120
     object loginid: TFDAutoIncField
       FieldName = 'id'
       Origin = 'id'
@@ -40,32 +41,34 @@ object dtm: Tdtm
       'DriverID=mySQL')
     Connected = True
     LoginPrompt = False
-    Left = 144
-    Top = 88
+    Left = 24
+    Top = 24
   end
   object FDGUIxWaitCursor1: TFDGUIxWaitCursor
     Provider = 'Forms'
-    Left = 408
-    Top = 72
+    Left = 216
+    Top = 24
   end
   object FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink
     VendorLib = 
       'C:\Users\ALUNO21\Music\Entrada-e-Saida\Entrada e saida\fontes\li' +
       'bmysql.dll'
-    Left = 232
-    Top = 48
+    Left = 112
+    Top = 24
   end
   object ds_login: TDataSource
     DataSet = login
-    Left = 64
-    Top = 272
+    Left = 16
+    Top = 184
   end
   object cadastro_pedagogas: TFDQuery
+    Active = True
+    BeforePost = cadastro_pedagogasBeforePost
     Connection = conexao
     SQL.Strings = (
       'SELECT * FROM sistema.pedagogas')
-    Left = 184
-    Top = 224
+    Left = 104
+    Top = 120
     object cadastro_pedagogasid: TFDAutoIncField
       DisplayWidth = 7
       FieldName = 'id'
@@ -96,15 +99,16 @@ object dtm: Tdtm
   end
   object ds_cadastro_pedagogas: TDataSource
     DataSet = cadastro_pedagogas
-    Left = 176
-    Top = 280
+    Left = 104
+    Top = 184
   end
   object saidas: TFDQuery
+    Active = True
     Connection = conexao
     SQL.Strings = (
       'SELECT * FROM saidas')
-    Left = 408
-    Top = 232
+    Left = 272
+    Top = 120
     object saidasid: TFDAutoIncField
       FieldName = 'id'
       Origin = 'id'
@@ -140,15 +144,16 @@ object dtm: Tdtm
   end
   object ds_saidas: TDataSource
     DataSet = saidas
-    Left = 392
-    Top = 320
+    Left = 272
+    Top = 184
   end
   object entradas: TFDQuery
+    Active = True
     Connection = conexao
     SQL.Strings = (
       'SELECT * FROM entradas')
-    Left = 288
-    Top = 232
+    Left = 200
+    Top = 120
     object entradasid: TFDAutoIncField
       FieldName = 'id'
       Origin = 'id'
@@ -184,23 +189,25 @@ object dtm: Tdtm
   end
   object ds_entrada: TDataSource
     DataSet = entradas
-    Left = 296
-    Top = 304
+    Left = 200
+    Top = 184
   end
   object cadastro_responsaveis: TFDQuery
     Active = True
     Connection = conexao
     SQL.Strings = (
       'SELECT * FROM responsaveis')
-    Left = 696
-    Top = 264
+    Left = 384
+    Top = 120
     object cadastro_responsaveisnome: TStringField
+      DisplayWidth = 12
       FieldName = 'nome'
       Origin = 'nome'
       Required = True
       Size = 80
     end
     object cadastro_responsaveistelefone: TStringField
+      DisplayWidth = 17
       FieldName = 'telefone'
       Origin = 'telefone'
       Required = True
@@ -208,11 +215,14 @@ object dtm: Tdtm
       Size = 14
     end
     object cadastro_responsaveisid: TFDAutoIncField
+      DisplayWidth = 12
       FieldName = 'id'
       Origin = 'id'
       ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
     end
     object cadastro_responsaveiscpf: TStringField
+      DisplayWidth = 13
       FieldName = 'cpf'
       Origin = 'cpf'
       Required = True
@@ -222,7 +232,95 @@ object dtm: Tdtm
   end
   object ds_cadastro_responsaveis: TDataSource
     DataSet = cadastro_responsaveis
-    Left = 680
-    Top = 336
+    Left = 384
+    Top = 176
+  end
+  object cadastro_curso: TFDQuery
+    Active = True
+    Connection = conexao
+    SQL.Strings = (
+      'SELECT * FROM cursos')
+    Left = 520
+    Top = 120
+    object cadastro_cursoid: TFDAutoIncField
+      DisplayWidth = 25
+      FieldName = 'id'
+      Origin = 'id'
+      ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
+    end
+    object cadastro_cursocurso: TStringField
+      DisplayWidth = 54
+      FieldName = 'curso'
+      Origin = 'curso'
+      Required = True
+      Size = 45
+    end
+  end
+  object ds_cadastro_curso: TDataSource
+    DataSet = cadastro_curso
+    Left = 528
+    Top = 200
+  end
+  object cadastro_turmas: TFDQuery
+    Active = True
+    Connection = conexao
+    SQL.Strings = (
+      'SELECT * FROM turmas')
+    Left = 648
+    Top = 120
+    object cadastro_turmasid: TFDAutoIncField
+      FieldName = 'id'
+      Origin = 'id'
+      ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
+    end
+    object cadastro_turmasserie: TStringField
+      FieldName = 'serie'
+      Origin = 'serie'
+      Required = True
+      Size = 10
+    end
+    object cadastro_turmasturma: TIntegerField
+      FieldName = 'turma'
+      Origin = 'turma'
+      Required = True
+    end
+    object cadastro_turmassala: TIntegerField
+      FieldName = 'sala'
+      Origin = 'sala'
+      Required = True
+    end
+    object cadastro_turmasCurso: TIntegerField
+      FieldName = 'Curso'
+      Origin = 'Curso'
+      Required = True
+    end
+    object cadastro_turmasnew_curso: TStringField
+      FieldKind = fkLookup
+      FieldName = 'new_curso'
+      LookupDataSet = cadastro_curso
+      LookupKeyFields = 'id'
+      LookupResultField = 'curso'
+      KeyFields = 'Curso'
+      Lookup = True
+    end
+  end
+  object ds_cadastro_turmas: TDataSource
+    DataSet = cadastro_turmas
+    Left = 640
+    Top = 200
+  end
+  object cadastro_alunos: TFDQuery
+    Connection = conexao
+    SQL.Strings = (
+      'SELECT * FROM alunos')
+    Left = 464
+    Top = 296
+  end
+  object ds_cadastro_alunos: TDataSource
+    DataSet = cadastro_alunos
+    Left = 464
+    Top = 368
   end
 end

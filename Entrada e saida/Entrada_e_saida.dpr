@@ -10,21 +10,25 @@ uses
   unt_atrasos in 'fontes\unt_atrasos.pas' {frm_atrasos},
   unt_saidas in 'fontes\unt_saidas.pas' {frm_saida},
   unt_cadastro_alunos in 'fontes\unt_cadastro_alunos.pas' {frm_cadastroaluno},
-  unt_cadastro_responsaveis in 'fontes\unt_cadastro_responsaveis.pas' {frm_cadastro_responsaveis};
+  unt_cadastro_responsaveis in 'fontes\unt_cadastro_responsaveis.pas' {frm_cadastro_responsaveis},
+  unt_cadastro_cursos in 'fontes\unt_cadastro_cursos.pas' {frm_cadastrar_curso},
+  unt_cadastro_turmas in 'fontes\unt_cadastro_turmas.pas' {frm_cadastro_turmas};
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
+  Application.CreateForm(Tfrm_cadastro_pedagogas, frm_cadastro_pedagogas);
   Application.CreateForm(Tfrm_login, frm_login);
+  Application.CreateForm(Tfrm_adm, frm_adm);
   Application.CreateForm(Tdtm, dtm);
   Application.CreateForm(Tfrm_inicio, frm_inicio);
-  Application.CreateForm(Tfrm_cadastro_pedagogas, frm_cadastro_pedagogas);
-  Application.CreateForm(Tfrm_adm, frm_adm);
   Application.CreateForm(Tfrm_atrasos, frm_atrasos);
   Application.CreateForm(Tfrm_saida, frm_saida);
   Application.CreateForm(Tfrm_cadastroaluno, frm_cadastroaluno);
   Application.CreateForm(Tfrm_cadastro_responsaveis, frm_cadastro_responsaveis);
+  Application.CreateForm(Tfrm_cadastrar_curso, frm_cadastrar_curso);
+  Application.CreateForm(Tfrm_cadastro_turmas, frm_cadastro_turmas);
   Application.Run;
 end.

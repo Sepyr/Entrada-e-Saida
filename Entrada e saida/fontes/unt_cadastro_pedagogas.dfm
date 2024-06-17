@@ -2,8 +2,8 @@ object frm_cadastro_pedagogas: Tfrm_cadastro_pedagogas
   Left = 0
   Top = 0
   Caption = 'Cadastro Usuarios'
-  ClientHeight = 472
-  ClientWidth = 806
+  ClientHeight = 443
+  ClientWidth = 590
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,39 +16,43 @@ object frm_cadastro_pedagogas: Tfrm_cadastro_pedagogas
   PixelsPerInch = 96
   TextHeight = 13
   object SpeedButton1: TSpeedButton
-    Left = 54
+    Left = 32
     Top = 195
-    Width = 67
+    Width = 82
     Height = 46
     Action = DatasetInsert1
+    BiDiMode = bdLeftToRight
     Caption = 'Inserir'
+    ParentBiDiMode = False
+    Transparent = False
   end
   object SpeedButton2: TSpeedButton
-    Left = 216
+    Left = 227
     Top = 195
-    Width = 72
+    Width = 82
     Height = 46
     Action = DatasetDelete1
     Caption = 'Deletar'
+    OnClick = SpeedButton2Click
   end
   object SpeedButton3: TSpeedButton
-    Left = 144
+    Left = 128
     Top = 195
-    Width = 66
+    Width = 82
     Height = 46
     Action = DatasetEdit1
     Caption = 'Editar'
   end
   object SpeedButton4: TSpeedButton
-    Left = 301
+    Left = 323
     Top = 195
-    Width = 76
+    Width = 82
     Height = 46
     Action = DatasetPost1
     Caption = 'Salvar'
   end
   object SpeedButton5: TSpeedButton
-    Left = 392
+    Left = 419
     Top = 195
     Width = 81
     Height = 46
@@ -56,7 +60,7 @@ object frm_cadastro_pedagogas: Tfrm_cadastro_pedagogas
     Caption = 'Cancelar'
   end
   object Label1: TLabel
-    Left = 56
+    Left = 32
     Top = 56
     Width = 26
     Height = 13
@@ -64,7 +68,7 @@ object frm_cadastro_pedagogas: Tfrm_cadastro_pedagogas
     FocusControl = DBEdit1
   end
   object Label2: TLabel
-    Left = 56
+    Left = 32
     Top = 96
     Width = 35
     Height = 13
@@ -72,7 +76,7 @@ object frm_cadastro_pedagogas: Tfrm_cadastro_pedagogas
     FocusControl = DBEdit2
   end
   object Label3: TLabel
-    Left = 56
+    Left = 32
     Top = 136
     Width = 29
     Height = 13
@@ -80,36 +84,36 @@ object frm_cadastro_pedagogas: Tfrm_cadastro_pedagogas
     FocusControl = DBEdit3
   end
   object DBEdit1: TDBEdit
-    Left = 56
+    Left = 32
     Top = 72
-    Width = 589
+    Width = 321
     Height = 21
     DataField = 'nome'
     DataSource = dtm.ds_cadastro_pedagogas
     TabOrder = 0
   end
   object DBEdit2: TDBEdit
-    Left = 56
+    Left = 32
     Top = 109
-    Width = 524
+    Width = 217
     Height = 21
     DataField = 'usuario'
     DataSource = dtm.ds_cadastro_pedagogas
     TabOrder = 1
   end
   object DBEdit3: TDBEdit
-    Left = 56
+    Left = 32
     Top = 152
-    Width = 264
+    Width = 145
     Height = 21
     DataField = 'senha'
     DataSource = dtm.ds_cadastro_pedagogas
     TabOrder = 2
   end
   object DBGrid1: TDBGrid
-    Left = 56
+    Left = 32
     Top = 288
-    Width = 633
+    Width = 524
     Height = 120
     DataSource = dtm.ds_cadastro_pedagogas
     Options = [dgTitles, dgIndicator, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
@@ -175,8 +179,8 @@ object frm_cadastro_pedagogas: Tfrm_cadastro_pedagogas
       end>
   end
   object ActionManager1: TActionManager
-    Left = 672
-    Top = 104
+    Left = 416
+    Top = 80
     StyleName = 'Platform Default'
     object DatasetInsert1: TDataSetInsert
       Category = 'Dataset'

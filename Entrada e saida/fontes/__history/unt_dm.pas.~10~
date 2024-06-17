@@ -1,0 +1,71 @@
+unit unt_dm;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
+  FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, Data.DB,
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, FireDAC.UI.Intf, FireDAC.Stan.Def,
+  FireDAC.Stan.Pool, FireDAC.Phys, FireDAC.VCLUI.Wait, FireDAC.Phys.MySQLDef,
+  FireDAC.Phys.MySQL, FireDAC.Comp.UI;
+
+type
+  Tdtm = class(TDataModule)
+    login: TFDQuery;
+    conexao: TFDConnection;
+    FDGUIxWaitCursor1: TFDGUIxWaitCursor;
+    FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink;
+    ds_login: TDataSource;
+    loginid: TFDAutoIncField;
+    loginnome: TStringField;
+    loginusuario: TStringField;
+    loginsenha: TStringField;
+    cadastro_pedagogas: TFDQuery;
+    ds_cadastro_pedagogas: TDataSource;
+    cadastro_pedagogasid: TFDAutoIncField;
+    cadastro_pedagogasnome: TStringField;
+    cadastro_pedagogasusuario: TStringField;
+    cadastro_pedagogassenha: TStringField;
+    saidas: TFDQuery;
+    ds_saidas: TDataSource;
+    saidasid: TFDAutoIncField;
+    saidasdata: TDateField;
+    saidashorario: TTimeField;
+    saidasjustificativa: TStringField;
+    saidasAluno: TIntegerField;
+    saidasPedagoga: TIntegerField;
+    entradas: TFDQuery;
+    ds_entrada: TDataSource;
+    entradasid: TFDAutoIncField;
+    entradasdata: TDateField;
+    entradashorario: TTimeField;
+    entradasjustificativa: TStringField;
+    entradasAluno: TIntegerField;
+    entradasPedagoga: TIntegerField;
+    cadastro_responsaveis: TFDQuery;
+    ds_cadastro_responsaveis: TDataSource;
+    cadastro_responsaveisnome: TStringField;
+    cadastro_responsaveistelefone: TStringField;
+    cadastro_responsaveisid: TFDAutoIncField;
+    cadastro_responsaveiscpf: TStringField;
+    cadastro_curso: TFDQuery;
+    ds_cadastro_curso: TDataSource;
+    cadastro_cursoid: TFDAutoIncField;
+    cadastro_cursocurso: TStringField;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  dtm: Tdtm;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+end.

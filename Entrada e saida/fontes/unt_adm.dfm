@@ -23,4 +23,28 @@ object frm_adm: Tfrm_adm
     Caption = 'Cadastrar Pedagogas'
     OnClick = btn_cadastropedagogasClick
   end
+  object SpeedButton1: TSpeedButton
+    Left = 104
+    Top = 144
+    Width = 103
+    Height = 46
+    Caption = 'Cadastrar Cursos'
+    OnClick = SpeedButton1Click
+  end
+  object SpeedButton2: TSpeedButton
+    Left = 213
+    Top = 176
+    Width = 129
+    Height = 81
+    Caption = 'Cadastrar Turmas'
+    OnClick = SpeedButton2Click
+  end
+  object SpeedButton3: TSpeedButton
+    Left = 336
+    Top = 80
+    Width = 129
+    Height = 46
+    Caption = 'Cadastrar Respons'#225'vel'
+    OnClick = SpeedButton3Click
+  end
 end

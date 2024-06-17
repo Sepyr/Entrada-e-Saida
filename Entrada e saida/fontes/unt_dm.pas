@@ -49,6 +49,21 @@ type
     cadastro_responsaveistelefone: TStringField;
     cadastro_responsaveisid: TFDAutoIncField;
     cadastro_responsaveiscpf: TStringField;
+    cadastro_curso: TFDQuery;
+    ds_cadastro_curso: TDataSource;
+    cadastro_cursoid: TFDAutoIncField;
+    cadastro_cursocurso: TStringField;
+    cadastro_turmas: TFDQuery;
+    ds_cadastro_turmas: TDataSource;
+    cadastro_turmasid: TFDAutoIncField;
+    cadastro_turmasserie: TStringField;
+    cadastro_turmasturma: TIntegerField;
+    cadastro_turmassala: TIntegerField;
+    cadastro_turmasCurso: TIntegerField;
+    cadastro_turmasnew_curso: TStringField;
+    cadastro_alunos: TFDQuery;
+    ds_cadastro_alunos: TDataSource;
+    procedure cadastro_pedagogasBeforePost(DataSet: TDataSet);
   private
     { Private declarations }
   public
@@ -63,5 +78,13 @@ implementation
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 
 {$R *.dfm}
+
+procedure Tdtm.cadastro_pedagogasBeforePost(DataSet: TDataSet);
+begin
+if dtm.cadastro_pedagogasnome.IsNull then
+raise Exception.Create('Error Message');
+
+end;
+
 
 end.
