@@ -13,6 +13,7 @@ type
     Image1: TImage;
     Image2: TImage;
     SpeedButton3: TSpeedButton;
+    Image3: TImage;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure SpeedButton2Click(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);

@@ -77,6 +77,7 @@
         <DCC_RemoteDebug>true</DCC_RemoteDebug>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <Icon_MainIcon>Entrada_e_saida_Icon2.ico</Icon_MainIcon>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <AppEnableHighDPI>true</AppEnableHighDPI>
@@ -140,6 +141,10 @@
         </DCCReference>
         <DCCReference Include="fontes\unt_cadastro_turmas.pas">
             <Form>frm_cadastro_turmas</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="fontes\unt_vinculo_responsavel.pas">
+            <Form>frm_vinculo_responsavel</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">

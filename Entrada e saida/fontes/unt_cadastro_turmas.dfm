@@ -4,7 +4,7 @@ object frm_cadastro_turmas: Tfrm_cadastro_turmas
   Caption = 'Cadastrar Turma'
   ClientHeight = 410
   ClientWidth = 422
-  Color = clBtnFace
+  Color = 12363958
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11

@@ -63,6 +63,31 @@ type
     cadastro_turmasnew_curso: TStringField;
     cadastro_alunos: TFDQuery;
     ds_cadastro_alunos: TDataSource;
+    cadastro_alunosmatricula: TIntegerField;
+    cadastro_alunosnome: TStringField;
+    cadastro_alunosTurma: TIntegerField;
+    vinculo_responsavel: TFDQuery;
+    ds_vinculo_responsavel: TDataSource;
+    vinculo_responsavelid: TFDAutoIncField;
+    vinculo_responsavelaluno: TIntegerField;
+    vinculo_responsavelresponsavel: TIntegerField;
+    vinculo_responsavelgrau_de_parentesco: TStringField;
+    busca_responsavel: TFDQuery;
+    ds_busca_responsavel: TDataSource;
+    busca_responsavelid: TFDAutoIncField;
+    busca_responsavelnome: TStringField;
+    busca_responsaveltelefone: TStringField;
+    busca_responsavelcpf: TStringField;
+    entrada_atrasada: TFDQuery;
+    ds_entrada_atrasada: TDataSource;
+    entrada_atrasadaid: TFDAutoIncField;
+    entrada_atrasadadata: TDateField;
+    entrada_atrasadahorario: TTimeField;
+    entrada_atrasadajustificativa: TStringField;
+    entrada_atrasadaAluno: TIntegerField;
+    entrada_atrasadaPedagoga: TIntegerField;
+    busca_alunos: TFDQuery;
+    ds_busca_alunos1: TDataSource;
     procedure cadastro_pedagogasBeforePost(DataSet: TDataSet);
   private
     { Private declarations }
@@ -82,7 +107,11 @@ implementation
 procedure Tdtm.cadastro_pedagogasBeforePost(DataSet: TDataSet);
 begin
 if dtm.cadastro_pedagogasnome.IsNull then
-raise Exception.Create('Error Message');
+raise Exception.Create('O campo nome não pode ficar em branco.');
+if dtm.cadastro_pedagogasusuario.IsNull then
+raise Exception.Create('O campo usuário não pode ficar em branco.');
+if dtm.cadastro_pedagogassenha.IsNull then
+raise Exception.Create('O campo senha não pode ficar em branco.');
 
 end;
 

@@ -1,9 +1,9 @@
 object frm_login: Tfrm_login
   Left = 0
   Top = 0
-  Caption = 'Login'
-  ClientHeight = 493
-  ClientWidth = 833
+  Caption = 'Bem Vindo'
+  ClientHeight = 420
+  ClientWidth = 584
   Color = 12363958
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,8 +16,8 @@ object frm_login: Tfrm_login
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
-    Left = 376
-    Top = 101
+    Left = 248
+    Top = 77
     Width = 83
     Height = 29
     Caption = 'Usu'#225'rio'
@@ -29,8 +29,8 @@ object frm_login: Tfrm_login
     ParentFont = False
   end
   object Label2: TLabel
-    Left = 384
-    Top = 191
+    Left = 256
+    Top = 167
     Width = 64
     Height = 29
     Caption = 'Senha'
@@ -42,8 +42,8 @@ object frm_login: Tfrm_login
     ParentFont = False
   end
   object btn_login: TSpeedButton
-    Left = 360
-    Top = 288
+    Left = 232
+    Top = 264
     Width = 129
     Height = 41
     Cursor = crHandPoint
@@ -871,15 +871,15 @@ object frm_login: Tfrm_login
     OnClick = btn_loginClick
   end
   object edt_user: TEdit
-    Left = 320
-    Top = 136
+    Left = 192
+    Top = 112
     Width = 201
-    Height = 25
+    Height = 21
     TabOrder = 0
   end
   object edt_senha: TEdit
-    Left = 320
-    Top = 226
+    Left = 192
+    Top = 202
     Width = 201
     Height = 21
     PasswordChar = '*'

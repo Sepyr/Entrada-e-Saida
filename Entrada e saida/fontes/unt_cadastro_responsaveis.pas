@@ -30,8 +30,6 @@ type
     DBEdit3: TDBEdit;
     procedure DBEdit2Click(Sender: TObject);
     procedure DBEdit3Click(Sender: TObject);
-    procedure DBEdit2Enter(Sender: TObject);
-    procedure DBEdit3Enter(Sender: TObject);
   private
     { Private declarations }
   public
@@ -48,24 +46,15 @@ implementation
 uses unt_dm;
 
 
+
 procedure Tfrm_cadastro_responsaveis.DBEdit2Click(Sender: TObject);
 begin
- DBEdit2.SelStart:=1
-end;
-
-procedure Tfrm_cadastro_responsaveis.DBEdit2Enter(Sender: TObject);
-begin
-    DBEdit2.SelStart:=1;
+  DBEdit2.SelStart:=1;
 end;
 
 procedure Tfrm_cadastro_responsaveis.DBEdit3Click(Sender: TObject);
 begin
   DBEdit3.SelStart:=0;
-end;
-
-procedure Tfrm_cadastro_responsaveis.DBEdit3Enter(Sender: TObject);
-begin
-DBEdit3.SelStart:=0;
 end;
 
 end.

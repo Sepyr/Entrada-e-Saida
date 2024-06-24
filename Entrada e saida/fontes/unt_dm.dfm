@@ -226,7 +226,7 @@ object dtm: Tdtm
       FieldName = 'cpf'
       Origin = 'cpf'
       Required = True
-      EditMask = '000\.000\.000\-00;1;_'
+      EditMask = '000\-000\-000\-00;1;_'
       Size = 11
     end
   end
@@ -312,15 +312,167 @@ object dtm: Tdtm
     Top = 200
   end
   object cadastro_alunos: TFDQuery
+    Active = True
     Connection = conexao
     SQL.Strings = (
       'SELECT * FROM alunos')
     Left = 464
     Top = 296
+    object cadastro_alunosmatricula: TIntegerField
+      DisplayWidth = 12
+      FieldName = 'matricula'
+      Origin = 'matricula'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object cadastro_alunosnome: TStringField
+      DisplayWidth = 12
+      FieldName = 'nome'
+      Origin = 'nome'
+      Required = True
+      Size = 80
+    end
+    object cadastro_alunosTurma: TIntegerField
+      DisplayWidth = 12
+      FieldName = 'Turma'
+      Origin = 'Turma'
+      Required = True
+    end
   end
   object ds_cadastro_alunos: TDataSource
     DataSet = cadastro_alunos
     Left = 464
     Top = 368
+  end
+  object vinculo_responsavel: TFDQuery
+    Active = True
+    Connection = conexao
+    SQL.Strings = (
+      'SELECT * FROM sistema.aluno_responsavel;')
+    Left = 608
+    Top = 296
+    object vinculo_responsavelid: TFDAutoIncField
+      FieldName = 'id'
+      Origin = 'id'
+      ProviderFlags = [pfInWhere, pfInKey]
+    end
+    object vinculo_responsavelaluno: TIntegerField
+      FieldName = 'aluno'
+      Origin = 'aluno'
+      Required = True
+    end
+    object vinculo_responsavelresponsavel: TIntegerField
+      FieldName = 'responsavel'
+      Origin = 'responsavel'
+      Required = True
+    end
+    object vinculo_responsavelgrau_de_parentesco: TStringField
+      FieldName = 'grau_de_parentesco'
+      Origin = 'grau_de_parentesco'
+      Required = True
+      FixedChar = True
+      Size = 5
+    end
+  end
+  object ds_vinculo_responsavel: TDataSource
+    DataSet = vinculo_responsavel
+    Left = 608
+    Top = 360
+  end
+  object busca_responsavel: TFDQuery
+    Active = True
+    Connection = conexao
+    SQL.Strings = (
+      'SELECT * FROM sistema.responsaveis;')
+    Left = 752
+    Top = 304
+    object busca_responsavelid: TFDAutoIncField
+      DisplayWidth = 17
+      FieldName = 'id'
+      Origin = 'id'
+      ProviderFlags = [pfInWhere, pfInKey]
+    end
+    object busca_responsavelnome: TStringField
+      DisplayWidth = 9
+      FieldName = 'nome'
+      Origin = 'nome'
+      Required = True
+      Size = 80
+    end
+    object busca_responsaveltelefone: TStringField
+      DisplayWidth = 17
+      FieldName = 'telefone'
+      Origin = 'telefone'
+      Required = True
+      Size = 14
+    end
+    object busca_responsavelcpf: TStringField
+      DisplayWidth = 24
+      FieldName = 'cpf'
+      Origin = 'cpf'
+      Required = True
+    end
+  end
+  object ds_busca_responsavel: TDataSource
+    DataSet = busca_responsavel
+    Left = 760
+    Top = 360
+  end
+  object entrada_atrasada: TFDQuery
+    Active = True
+    Connection = conexao
+    SQL.Strings = (
+      'SELECT * FROM entradas')
+    Left = 64
+    Top = 312
+    object entrada_atrasadaid: TFDAutoIncField
+      FieldName = 'id'
+      Origin = 'id'
+      ProviderFlags = [pfInWhere, pfInKey]
+    end
+    object entrada_atrasadadata: TDateField
+      FieldName = 'data'
+      Origin = '`data`'
+      Required = True
+    end
+    object entrada_atrasadahorario: TTimeField
+      FieldName = 'horario'
+      Origin = 'horario'
+      Required = True
+    end
+    object entrada_atrasadajustificativa: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'justificativa'
+      Origin = 'justificativa'
+      Size = 255
+    end
+    object entrada_atrasadaAluno: TIntegerField
+      FieldName = 'Aluno'
+      Origin = 'Aluno'
+      Required = True
+    end
+    object entrada_atrasadaPedagoga: TIntegerField
+      FieldName = 'Pedagoga'
+      Origin = 'Pedagoga'
+      Required = True
+    end
+  end
+  object ds_entrada_atrasada: TDataSource
+    DataSet = entrada_atrasada
+    Left = 64
+    Top = 408
+  end
+  object busca_alunos: TFDQuery
+    Active = True
+    Connection = conexao
+    SQL.Strings = (
+      'SELECT * FROM alunos')
+    Left = 216
+    Top = 376
+  end
+  object ds_busca_alunos1: TDataSource
+    DataSet = busca_alunos
+    Left = 256
+    Top = 456
   end
 end

@@ -13,7 +13,6 @@ type
     SpeedButton1: TSpeedButton;
     SpeedButton2: TSpeedButton;
     SpeedButton3: TSpeedButton;
-    SpeedButton4: TSpeedButton;
     SpeedButton5: TSpeedButton;
     ActionManager1: TActionManager;
     DatasetInsert1: TDataSetInsert;
@@ -28,6 +27,7 @@ type
     Label3: TLabel;
     DBEdit3: TDBEdit;
     DBGrid1: TDBGrid;
+    SpeedButton4: TSpeedButton;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure SpeedButton2Click(Sender: TObject);
   private

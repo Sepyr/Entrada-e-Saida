@@ -2,8 +2,8 @@ object frm_saida: Tfrm_saida
   Left = 0
   Top = 0
   Caption = 'Saida Adiantada'
-  ClientHeight = 299
-  ClientWidth = 635
+  ClientHeight = 438
+  ClientWidth = 722
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

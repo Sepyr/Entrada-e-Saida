@@ -4,7 +4,7 @@ object frm_cadastrar_curso: Tfrm_cadastrar_curso
   Caption = 'Cadastrar Cursos'
   ClientHeight = 374
   ClientWidth = 441
-  Color = clBtnFace
+  Color = 12363958
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -66,7 +66,7 @@ object frm_cadastrar_curso: Tfrm_cadastrar_curso
     Left = 32
     Top = 59
     Width = 169
-    Height = 32
+    Height = 21
     DataField = 'curso'
     DataSource = dtm.ds_cadastro_curso
     TabOrder = 0
@@ -94,7 +94,7 @@ object frm_cadastrar_curso: Tfrm_cadastrar_curso
         Title.Font.Height = -11
         Title.Font.Name = 'Tahoma'
         Title.Font.Style = [fsBold]
-        Width = 80
+        Width = 64
         Visible = True
       end
       item

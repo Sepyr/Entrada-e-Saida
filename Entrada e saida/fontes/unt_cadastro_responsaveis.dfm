@@ -1,10 +1,10 @@
 object frm_cadastro_responsaveis: Tfrm_cadastro_responsaveis
   Left = 0
   Top = 0
-  Caption = 'Cadastro Responsaveis'
+  Caption = 'Cadastro Respons'#225'veis'
   ClientHeight = 393
   ClientWidth = 452
-  Color = clBtnFace
+  Color = 12363958
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -55,35 +55,38 @@ object frm_cadastro_responsaveis: Tfrm_cadastro_responsaveis
     Caption = 'Cancelar'
   end
   object Label1: TLabel
-    Left = 18
-    Top = 8
+    Left = 40
+    Top = 16
     Width = 26
     Height = 13
     Caption = 'nome'
     FocusControl = DBEdit1
   end
   object Label2: TLabel
-    Left = 18
-    Top = 48
+    Left = 40
+    Top = 56
     Width = 40
     Height = 13
     Caption = 'telefone'
     FocusControl = DBEdit2
   end
   object Label3: TLabel
-    Left = 18
-    Top = 88
+    Left = 40
+    Top = 96
     Width = 15
     Height = 13
     Caption = 'cpf'
     FocusControl = DBEdit3
   end
   object DBGrid1: TDBGrid
-    Left = 24
+    Left = 40
     Top = 228
-    Width = 369
+    Width = 377
     Height = 120
+    Color = clWhite
     DataSource = dtm.ds_cadastro_responsaveis
+    FixedColor = clWhite
+    GradientEndColor = clWhite
     Options = [dgTitles, dgIndicator, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
     TabOrder = 0
     TitleFont.Charset = DEFAULT_CHARSET
@@ -140,12 +143,13 @@ object frm_cadastro_responsaveis: Tfrm_cadastro_responsaveis
         Title.Font.Height = -11
         Title.Font.Name = 'Tahoma'
         Title.Font.Style = [fsBold]
+        Width = 84
         Visible = True
       end>
   end
   object DBEdit1: TDBEdit
-    Left = 18
-    Top = 24
+    Left = 40
+    Top = 32
     Width = 160
     Height = 21
     DataField = 'nome'
@@ -153,24 +157,26 @@ object frm_cadastro_responsaveis: Tfrm_cadastro_responsaveis
     TabOrder = 1
   end
   object DBEdit2: TDBEdit
-    Left = 18
-    Top = 64
+    Left = 40
+    Top = 72
     Width = 221
     Height = 21
     DataField = 'telefone'
     DataSource = dtm.ds_cadastro_responsaveis
     MaxLength = 14
     TabOrder = 2
+    OnClick = DBEdit2Click
   end
   object DBEdit3: TDBEdit
-    Left = 18
-    Top = 104
+    Left = 40
+    Top = 115
     Width = 171
     Height = 21
     DataField = 'cpf'
     DataSource = dtm.ds_cadastro_responsaveis
     MaxLength = 14
     TabOrder = 3
+    OnClick = DBEdit3Click
   end
   object ActionManager1: TActionManager
     Left = 360
