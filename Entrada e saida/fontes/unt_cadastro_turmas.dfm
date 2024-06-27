@@ -2,8 +2,8 @@ object frm_cadastro_turmas: Tfrm_cadastro_turmas
   Left = 0
   Top = 0
   Caption = 'Cadastrar Turma'
-  ClientHeight = 410
-  ClientWidth = 422
+  ClientHeight = 471
+  ClientWidth = 502
   Color = 12363958
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,119 +15,181 @@ object frm_cadastro_turmas: Tfrm_cadastro_turmas
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
-    Left = 32
-    Top = 16
-    Width = 24
-    Height = 13
+    Left = 24
+    Top = 23
+    Width = 38
+    Height = 19
     Caption = 'Serie'
     FocusControl = DBEdit1
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Constantia'
+    Font.Style = [fsBold]
+    ParentFont = False
   end
   object Label2: TLabel
-    Left = 32
-    Top = 53
-    Width = 30
-    Height = 13
+    Left = 24
+    Top = 88
+    Width = 50
+    Height = 19
     Caption = 'Turma'
     FocusControl = DBEdit2
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Constantia'
+    Font.Style = [fsBold]
+    ParentFont = False
   end
   object Label3: TLabel
-    Left = 32
-    Top = 96
-    Width = 20
-    Height = 13
+    Left = 24
+    Top = 151
+    Width = 31
+    Height = 19
     Caption = 'Sala'
     FocusControl = DBEdit3
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Constantia'
+    Font.Style = [fsBold]
+    ParentFont = False
   end
   object Label4: TLabel
-    Left = 32
-    Top = 136
-    Width = 28
-    Height = 13
+    Left = 24
+    Top = 203
+    Width = 45
+    Height = 19
     Caption = 'Curso'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Constantia'
+    Font.Style = [fsBold]
+    ParentFont = False
   end
   object SpeedButton2: TSpeedButton
-    Left = 32
-    Top = 192
+    Left = 40
+    Top = 272
     Width = 66
     Height = 38
     Action = DatasetInsert1
     Caption = 'Inserir'
   end
   object SpeedButton3: TSpeedButton
-    Left = 112
-    Top = 192
+    Left = 120
+    Top = 272
     Width = 66
     Height = 38
     Action = DatasetEdit1
     Caption = 'Editar'
   end
   object SpeedButton4: TSpeedButton
-    Left = 184
-    Top = 193
+    Left = 192
+    Top = 273
     Width = 66
     Height = 37
     Action = DatasetDelete1
     Caption = 'Deletar'
   end
   object SpeedButton5: TSpeedButton
-    Left = 256
-    Top = 192
+    Left = 264
+    Top = 272
     Width = 66
     Height = 37
     Action = DatasetPost1
     Caption = 'Salvar'
   end
   object SpeedButton6: TSpeedButton
-    Left = 328
-    Top = 193
+    Left = 336
+    Top = 271
     Width = 66
     Height = 38
     Action = DatasetCancel1
     Caption = 'Cancelar'
   end
+  object SpeedButton1: TSpeedButton
+    Left = 208
+    Top = 222
+    Width = 113
+    Height = 27
+    Caption = 'Cadastrar Curso'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Constantia'
+    Font.Style = []
+    ParentFont = False
+    OnClick = SpeedButton1Click
+  end
   object DBEdit1: TDBEdit
-    Left = 32
-    Top = 32
+    Left = 24
+    Top = 48
     Width = 134
-    Height = 21
+    Height = 27
     DataField = 'serie'
     DataSource = dtm.ds_cadastro_turmas
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Constantia'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 0
   end
   object DBEdit2: TDBEdit
-    Left = 32
-    Top = 72
+    Left = 24
+    Top = 113
     Width = 134
-    Height = 21
+    Height = 27
     DataField = 'turma'
     DataSource = dtm.ds_cadastro_turmas
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Constantia'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 1
   end
   object DBEdit3: TDBEdit
-    Left = 32
-    Top = 112
+    Left = 24
+    Top = 170
     Width = 134
-    Height = 21
+    Height = 27
     DataField = 'sala'
     DataSource = dtm.ds_cadastro_turmas
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Constantia'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 2
   end
   object DBLookupComboBox1: TDBLookupComboBox
-    Left = 32
-    Top = 155
-    Width = 145
-    Height = 21
+    Left = 24
+    Top = 222
+    Width = 161
+    Height = 27
     DataField = 'Curso'
     DataSource = dtm.ds_cadastro_turmas
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Constantia'
+    Font.Style = []
     KeyField = 'id'
     ListField = 'curso'
     ListSource = dtm.ds_cadastro_curso
+    ParentFont = False
     TabOrder = 3
   end
   object DBGrid1: TDBGrid
-    Left = 32
-    Top = 250
-    Width = 353
+    Left = 40
+    Top = 330
+    Width = 377
     Height = 120
     DataSource = dtm.ds_cadastro_turmas
     TabOrder = 4
@@ -190,6 +252,7 @@ object frm_cadastro_turmas: Tfrm_cadastro_turmas
         Title.Font.Height = -11
         Title.Font.Name = 'Tahoma'
         Title.Font.Style = [fsBold]
+        Width = 91
         Visible = True
       end>
   end

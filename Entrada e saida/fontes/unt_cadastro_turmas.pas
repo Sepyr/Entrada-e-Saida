@@ -30,6 +30,8 @@ type
     SpeedButton5: TSpeedButton;
     SpeedButton6: TSpeedButton;
     DBGrid1: TDBGrid;
+    SpeedButton1: TSpeedButton;
+    procedure SpeedButton1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -43,6 +45,11 @@ implementation
 
 {$R *.dfm}
 
-uses unt_dm;
+uses unt_dm, unt_cadastro_cursos;
+
+procedure Tfrm_cadastro_turmas.SpeedButton1Click(Sender: TObject);
+begin
+frm_cadastrar_curso.Show;
+end;
 
 end.

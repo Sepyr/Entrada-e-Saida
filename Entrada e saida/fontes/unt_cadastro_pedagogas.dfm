@@ -18,12 +18,17 @@ object frm_cadastro_pedagogas: Tfrm_cadastro_pedagogas
   object SpeedButton1: TSpeedButton
     Left = 32
     Top = 195
-    Width = 90
+    Width = 97
     Height = 46
     Action = DatasetInsert1
     BiDiMode = bdLeftToRight
     Caption = 'Inserir'
     Flat = True
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Constantia'
+    Font.Style = [fsBold]
     Glyph.Data = {
       021B0000424D021B00000000000036000000280000002E000000310000000100
       180000000000CC1A0000C30E0000C30E00000000000000000000BCA8B5BCA8B5
@@ -242,16 +247,23 @@ object frm_cadastro_pedagogas: Tfrm_cadastro_pedagogas
       A7B5BCA8B5BCA8B5BCA8B5BCA8B5BCA8B5BCA8B5BCA8B5BCA8B5BCA8B5BCA8B5
       BCA8B5BCA8B5BCA8B5BCA8B5BCA8B5BCA8B5BCA8B5BCA8B5BCA8B5BCA8B5BCA8
       B5BCA8B50000}
+    ParentFont = False
     ParentBiDiMode = False
     Transparent = False
   end
   object SpeedButton2: TSpeedButton
     Left = 248
     Top = 195
-    Width = 61
+    Width = 90
     Height = 46
     Action = DatasetDelete1
+    Caption = 'Deletar'
     Flat = True
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Constantia'
+    Font.Style = [fsBold]
     Glyph.Data = {
       9A140000424D9A140000000000003600000028000000260000002D0000000100
       18000000000064140000C30E0000C30E00000000000000000000BCA8B5BCA8B5
@@ -418,16 +430,22 @@ object frm_cadastro_pedagogas: Tfrm_cadastro_pedagogas
       A8B5BCA8B5BCA8B5BAA8B5BAA8B5BAA8B5BAA8B5BAA9B4BAA9B4BAA9B4BAA9B4
       BAA9B4BAA9B4BAA9B4BAA9B4BAA9B4BAA9B4BAA9B4BAA9B4BAA8B5BAA8B5BAA8
       B5BAA8B5BCA8B5BCA8B5BCA8B5BCA8B5BCA8B5BCA8B5BCA8B5BCA8B50000}
+    ParentFont = False
     OnClick = SpeedButton2Click
   end
   object SpeedButton3: TSpeedButton
     Left = 144
     Top = 195
-    Width = 82
+    Width = 89
     Height = 46
     Action = DatasetEdit1
     Caption = 'Editar'
     Flat = True
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Constantia'
+    Font.Style = [fsBold]
     Glyph.Data = {
       62160000424D621600000000000036000000280000002B0000002B0000000100
       1800000000002C160000C30E0000C30E00000000000000000000BCA8B5BCA8B5
@@ -609,15 +627,21 @@ object frm_cadastro_pedagogas: Tfrm_cadastro_pedagogas
       B5BEA7B5BEA7B5BEA7B6BEA7B6BCA7B6BCA7B6BAA7B6BAA7B6BAA8B5BAA8B5BA
       A8B5BAA8B5BAA8B5BAA8B5BAA9B4BAA9B4BCA8B5BCA8B5BCA8B5BCA8B5BCA8B5
       BCA8B5000000}
+    ParentFont = False
   end
   object SpeedButton5: TSpeedButton
-    Left = 456
+    Left = 440
     Top = 195
     Width = 100
     Height = 46
     Action = DatasetCancel1
     Caption = 'Cancelar'
     Flat = True
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Constantia'
+    Font.Style = [fsBold]
     Glyph.Data = {
       B6150000424DB61500000000000036000000280000002A0000002B0000000100
       18000000000080150000C20E0000C20E00000000000000000000BCA8B5BCA8B5
@@ -793,6 +817,7 @@ object frm_cadastro_pedagogas: Tfrm_cadastro_pedagogas
       ADBCACB7B7A7B2BBABB6B7A7B2B9AAB2B9AAB2B9AAB2B9AAB2B9A9B4B9A9B4B9
       A9B4B9A9B4B9A8B5BCAAB7B8A6B3BCAAB7B7A5B2B8A6B3BEABBAB7A2B1BBA7B4
       BEAAB7BCA8B5B7A3B0C3AFBCBAA6B3BEAAB7BDA9B6BCA8B50000}
+    ParentFont = False
   end
   object Label1: TLabel
     Left = 32
