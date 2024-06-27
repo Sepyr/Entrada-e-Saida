@@ -20,17 +20,16 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
+  Application.CreateForm(Tfrm_cadastroaluno, frm_cadastroaluno);
+  Application.CreateForm(Tfrm_inicio, frm_inicio);
+  Application.CreateForm(Tfrm_cadastro_responsaveis, frm_cadastro_responsaveis);
   Application.CreateForm(Tfrm_login, frm_login);
   Application.CreateForm(Tfrm_adm, frm_adm);
   Application.CreateForm(Tfrm_cadastro_pedagogas, frm_cadastro_pedagogas);
   Application.CreateForm(Tdtm, dtm);
-  Application.CreateForm(Tfrm_inicio, frm_inicio);
   Application.CreateForm(Tfrm_atrasos, frm_atrasos);
   Application.CreateForm(Tfrm_saida, frm_saida);
-  Application.CreateForm(Tfrm_cadastroaluno, frm_cadastroaluno);
-  Application.CreateForm(Tfrm_cadastro_responsaveis, frm_cadastro_responsaveis);
   Application.CreateForm(Tfrm_cadastrar_curso, frm_cadastrar_curso);
   Application.CreateForm(Tfrm_cadastro_turmas, frm_cadastro_turmas);
-  Application.CreateForm(Tfrm_vinculo_responsavel, frm_vinculo_responsavel);
   Application.Run;
 end.

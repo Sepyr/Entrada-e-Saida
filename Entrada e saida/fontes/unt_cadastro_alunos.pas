@@ -64,7 +64,9 @@ begin
 if
  messagedlg('Deseja vincular um responsável a esse aluno?',mtWarning,[mbYes,mbNo],0) = mrYes Then
 begin
+ frm_vinculo_responsavel:=Tfrm_vinculo_responsavel.Create(Self);
  frm_vinculo_responsavel.Aluno.Caption:= nome_aluno;
+ frm_vinculo_responsavel.grid_resp;
  frm_vinculo_responsavel.Show;
 end;
 end;

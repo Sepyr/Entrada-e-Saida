@@ -88,6 +88,14 @@ type
     entrada_atrasadaPedagoga: TIntegerField;
     busca_alunos: TFDQuery;
     ds_busca_alunos1: TDataSource;
+    view_resp: TFDQuery;
+    ds_view_resp: TDataSource;
+    view_respid: TFDAutoIncField;
+    view_respmatricula: TIntegerField;
+    view_respnomedoaluno: TStringField;
+    view_respidresponsavel: TFDAutoIncField;
+    view_respnome: TStringField;
+    view_respgrau_de_parentesco: TStringField;
     procedure cadastro_pedagogasBeforePost(DataSet: TDataSet);
   private
     { Private declarations }

@@ -355,6 +355,7 @@ object dtm: Tdtm
       FieldName = 'id'
       Origin = 'id'
       ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
     end
     object vinculo_responsavelaluno: TIntegerField
       FieldName = 'aluno'
@@ -391,6 +392,7 @@ object dtm: Tdtm
       FieldName = 'id'
       Origin = 'id'
       ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
     end
     object busca_responsavelnome: TStringField
       DisplayWidth = 9
@@ -429,6 +431,7 @@ object dtm: Tdtm
       FieldName = 'id'
       Origin = 'id'
       ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
     end
     object entrada_atrasadadata: TDateField
       FieldName = 'data'
@@ -474,5 +477,50 @@ object dtm: Tdtm
     DataSet = busca_alunos
     Left = 256
     Top = 456
+  end
+  object view_resp: TFDQuery
+    Active = True
+    Connection = conexao
+    SQL.Strings = (
+      'select * from resp;')
+    Left = 408
+    Top = 464
+    object view_respid: TFDAutoIncField
+      FieldName = 'id'
+      Origin = 'id'
+    end
+    object view_respmatricula: TIntegerField
+      FieldName = 'matricula'
+      Origin = 'matricula'
+      Required = True
+    end
+    object view_respnomedoaluno: TStringField
+      FieldName = 'nome do aluno'
+      Origin = '`nome do aluno`'
+      Required = True
+      Size = 80
+    end
+    object view_respidresponsavel: TFDAutoIncField
+      FieldName = 'id responsavel'
+      Origin = '`id responsavel`'
+    end
+    object view_respnome: TStringField
+      FieldName = 'nome'
+      Origin = 'nome'
+      Required = True
+      Size = 80
+    end
+    object view_respgrau_de_parentesco: TStringField
+      FieldName = 'grau_de_parentesco'
+      Origin = 'grau_de_parentesco'
+      Required = True
+      FixedChar = True
+      Size = 5
+    end
+  end
+  object ds_view_resp: TDataSource
+    DataSet = view_resp
+    Left = 416
+    Top = 528
   end
 end
