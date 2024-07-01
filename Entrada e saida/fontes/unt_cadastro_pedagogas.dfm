@@ -1,9 +1,10 @@
 object frm_cadastro_pedagogas: Tfrm_cadastro_pedagogas
   Left = 0
   Top = 0
+  BorderIcons = [biSystemMenu]
   Caption = 'Cadastro Pedagogas'
-  ClientHeight = 443
-  ClientWidth = 590
+  ClientHeight = 463
+  ClientWidth = 598
   Color = 12363958
   Font.Charset = ANSI_CHARSET
   Font.Color = clWindowText
@@ -16,8 +17,8 @@ object frm_cadastro_pedagogas: Tfrm_cadastro_pedagogas
   PixelsPerInch = 96
   TextHeight = 14
   object SpeedButton1: TSpeedButton
-    Left = 32
-    Top = 195
+    Left = 48
+    Top = 230
     Width = 97
     Height = 46
     Action = DatasetInsert1
@@ -252,8 +253,8 @@ object frm_cadastro_pedagogas: Tfrm_cadastro_pedagogas
     Transparent = False
   end
   object SpeedButton2: TSpeedButton
-    Left = 248
-    Top = 195
+    Left = 264
+    Top = 230
     Width = 90
     Height = 46
     Action = DatasetDelete1
@@ -434,8 +435,8 @@ object frm_cadastro_pedagogas: Tfrm_cadastro_pedagogas
     OnClick = SpeedButton2Click
   end
   object SpeedButton3: TSpeedButton
-    Left = 144
-    Top = 195
+    Left = 160
+    Top = 230
     Width = 89
     Height = 46
     Action = DatasetEdit1
@@ -630,8 +631,8 @@ object frm_cadastro_pedagogas: Tfrm_cadastro_pedagogas
     ParentFont = False
   end
   object SpeedButton5: TSpeedButton
-    Left = 440
-    Top = 195
+    Left = 456
+    Top = 230
     Width = 100
     Height = 46
     Action = DatasetCancel1
@@ -821,31 +822,49 @@ object frm_cadastro_pedagogas: Tfrm_cadastro_pedagogas
   end
   object Label1: TLabel
     Left = 32
-    Top = 56
-    Width = 31
-    Height = 14
+    Top = 40
+    Width = 46
+    Height = 19
     Caption = 'Nome'
     FocusControl = DBEdit1
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Constantia'
+    Font.Style = [fsBold]
+    ParentFont = False
   end
   object Label2: TLabel
     Left = 32
     Top = 96
-    Width = 41
-    Height = 14
+    Width = 60
+    Height = 19
     Caption = 'Usu'#225'rio'
     FocusControl = DBEdit2
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Constantia'
+    Font.Style = [fsBold]
+    ParentFont = False
   end
   object Label3: TLabel
     Left = 32
-    Top = 136
-    Width = 32
-    Height = 14
+    Top = 155
+    Width = 46
+    Height = 19
     Caption = 'Senha'
     FocusControl = DBEdit3
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Constantia'
+    Font.Style = [fsBold]
+    ParentFont = False
   end
   object SpeedButton4: TSpeedButton
-    Left = 344
-    Top = 195
+    Left = 360
+    Top = 230
     Width = 81
     Height = 46
     Action = DatasetPost1
@@ -1002,38 +1021,62 @@ object frm_cadastro_pedagogas: Tfrm_cadastro_pedagogas
   end
   object DBEdit1: TDBEdit
     Left = 32
-    Top = 69
+    Top = 63
     Width = 321
-    Height = 22
+    Height = 27
     DataField = 'nome'
     DataSource = dtm.ds_cadastro_pedagogas
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Constantia'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 0
   end
   object DBEdit2: TDBEdit
     Left = 32
-    Top = 109
+    Top = 121
     Width = 217
-    Height = 22
+    Height = 27
     DataField = 'usuario'
     DataSource = dtm.ds_cadastro_pedagogas
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Constantia'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 1
   end
   object DBEdit3: TDBEdit
     Left = 32
-    Top = 152
+    Top = 180
     Width = 145
-    Height = 22
+    Height = 27
     DataField = 'senha'
     DataSource = dtm.ds_cadastro_pedagogas
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Constantia'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 2
   end
   object DBGrid1: TDBGrid
     Left = 32
-    Top = 288
-    Width = 524
+    Top = 299
+    Width = 537
     Height = 120
     DataSource = dtm.ds_cadastro_pedagogas
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Constantia'
+    Font.Style = []
     Options = [dgTitles, dgIndicator, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+    ParentFont = False
     TabOrder = 3
     TitleFont.Charset = ANSI_CHARSET
     TitleFont.Color = clWindowText
@@ -1047,10 +1090,10 @@ object frm_cadastro_pedagogas: Tfrm_cadastro_pedagogas
         FieldName = 'id'
         Title.Alignment = taCenter
         Title.Caption = 'Matricula'
-        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Charset = ANSI_CHARSET
         Title.Font.Color = clWindowText
-        Title.Font.Height = -11
-        Title.Font.Name = 'Tahoma'
+        Title.Font.Height = -13
+        Title.Font.Name = 'Constantia'
         Title.Font.Style = [fsBold]
         Visible = True
       end
@@ -1060,10 +1103,10 @@ object frm_cadastro_pedagogas: Tfrm_cadastro_pedagogas
         FieldName = 'nome'
         Title.Alignment = taCenter
         Title.Caption = 'Nome'
-        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Charset = ANSI_CHARSET
         Title.Font.Color = clWindowText
-        Title.Font.Height = -11
-        Title.Font.Name = 'Tahoma'
+        Title.Font.Height = -13
+        Title.Font.Name = 'Constantia'
         Title.Font.Style = [fsBold]
         Visible = True
       end
@@ -1073,10 +1116,10 @@ object frm_cadastro_pedagogas: Tfrm_cadastro_pedagogas
         FieldName = 'usuario'
         Title.Alignment = taCenter
         Title.Caption = 'Usu'#225'rio'
-        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Charset = ANSI_CHARSET
         Title.Font.Color = clWindowText
-        Title.Font.Height = -11
-        Title.Font.Name = 'Tahoma'
+        Title.Font.Height = -13
+        Title.Font.Name = 'Constantia'
         Title.Font.Style = [fsBold]
         Width = 150
         Visible = True
@@ -1087,11 +1130,12 @@ object frm_cadastro_pedagogas: Tfrm_cadastro_pedagogas
         FieldName = 'senha'
         Title.Alignment = taCenter
         Title.Caption = 'Senha'
-        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Charset = ANSI_CHARSET
         Title.Font.Color = clWindowText
-        Title.Font.Height = -11
-        Title.Font.Name = 'Tahoma'
+        Title.Font.Height = -13
+        Title.Font.Name = 'Constantia'
         Title.Font.Style = [fsBold]
+        Width = 136
         Visible = True
       end>
   end

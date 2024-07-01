@@ -24,6 +24,7 @@ type
     SpeedButton4: TSpeedButton;
     SpeedButton5: TSpeedButton;
     DBGrid1: TDBGrid;
+    procedure SpeedButton3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -38,5 +39,14 @@ implementation
 {$R *.dfm}
 
 uses unt_dm;
+
+procedure Tfrm_cadastrar_curso.SpeedButton3Click(Sender: TObject);
+begin
+if
+ messagedlg('Excluir o Registro?',mtWarning,[mbYes,mbNo],0) = mrYes Then
+begin
+  dtm.cadastro_curso.delete;
+end;
+end;
 
 end.

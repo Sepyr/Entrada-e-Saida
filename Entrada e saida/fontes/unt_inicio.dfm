@@ -1,6 +1,7 @@
 object frm_inicio: Tfrm_inicio
   Left = 0
   Top = 0
+  BorderIcons = [biSystemMenu]
   Caption = 'inicio'
   ClientHeight = 530
   ClientWidth = 922

@@ -1,6 +1,7 @@
 object frm_login: Tfrm_login
   Left = 0
   Top = 0
+  BorderIcons = [biSystemMenu]
   Caption = 'Bem-Vindo'
   ClientHeight = 420
   ClientWidth = 584

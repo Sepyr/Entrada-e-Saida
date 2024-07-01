@@ -1,6 +1,7 @@
 object frm_atrasos: Tfrm_atrasos
   Left = 0
   Top = 0
+  BorderIcons = [biSystemMenu]
   Caption = 'Registro de Atraso'
   ClientHeight = 495
   ClientWidth = 916
@@ -88,7 +89,7 @@ object frm_atrasos: Tfrm_atrasos
     Left = 448
     Top = 413
     Width = 168
-    Height = 37
+    Height = 21
     DataField = 'justificativa'
     DataSource = dtm.ds_entrada_atrasada
     TabOrder = 2

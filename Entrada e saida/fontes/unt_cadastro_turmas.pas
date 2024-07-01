@@ -32,6 +32,7 @@ type
     DBGrid1: TDBGrid;
     SpeedButton1: TSpeedButton;
     procedure SpeedButton1Click(Sender: TObject);
+    procedure SpeedButton4Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -50,6 +51,15 @@ uses unt_dm, unt_cadastro_cursos;
 procedure Tfrm_cadastro_turmas.SpeedButton1Click(Sender: TObject);
 begin
 frm_cadastrar_curso.Show;
+end;
+
+procedure Tfrm_cadastro_turmas.SpeedButton4Click(Sender: TObject);
+begin
+if
+ messagedlg('Excluir o Registro?',mtWarning,[mbYes,mbNo],0) = mrYes Then
+begin
+  dtm.cadastro_turmas.delete;
+end;
 end;
 
 end.

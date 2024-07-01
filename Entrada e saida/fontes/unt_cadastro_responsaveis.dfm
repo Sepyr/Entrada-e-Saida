@@ -1,9 +1,10 @@
 object frm_cadastro_responsaveis: Tfrm_cadastro_responsaveis
   Left = 0
   Top = 0
+  BorderIcons = [biSystemMenu]
   Caption = 'Cadastro Respons'#225'veis'
-  ClientHeight = 387
-  ClientWidth = 574
+  ClientHeight = 453
+  ClientWidth = 562
   Color = 12363958
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,8 +16,8 @@ object frm_cadastro_responsaveis: Tfrm_cadastro_responsaveis
   PixelsPerInch = 96
   TextHeight = 13
   object SpeedButton1: TSpeedButton
-    Left = 40
-    Top = 168
+    Left = 32
+    Top = 232
     Width = 98
     Height = 38
     Action = DatasetInsert1
@@ -248,8 +249,8 @@ object frm_cadastro_responsaveis: Tfrm_cadastro_responsaveis
     ParentFont = False
   end
   object SpeedButton2: TSpeedButton
-    Left = 144
-    Top = 168
+    Left = 136
+    Top = 232
     Width = 89
     Height = 38
     Action = DatasetEdit1
@@ -444,8 +445,8 @@ object frm_cadastro_responsaveis: Tfrm_cadastro_responsaveis
     ParentFont = False
   end
   object SpeedButton3: TSpeedButton
-    Left = 248
-    Top = 168
+    Left = 240
+    Top = 232
     Width = 89
     Height = 38
     Action = DatasetDelete1
@@ -623,10 +624,11 @@ object frm_cadastro_responsaveis: Tfrm_cadastro_responsaveis
       BAA9B4BAA9B4BAA9B4BAA9B4BAA9B4BAA9B4BAA9B4BAA9B4BAA8B5BAA8B5BAA8
       B5BAA8B5BCA8B5BCA8B5BCA8B5BCA8B5BCA8B5BCA8B5BCA8B5BCA8B50000}
     ParentFont = False
+    OnClick = SpeedButton3Click
   end
   object SpeedButton4: TSpeedButton
-    Left = 343
-    Top = 168
+    Left = 335
+    Top = 232
     Width = 89
     Height = 38
     Action = DatasetPost1
@@ -782,8 +784,8 @@ object frm_cadastro_responsaveis: Tfrm_cadastro_responsaveis
     ParentFont = False
   end
   object SpeedButton5: TSpeedButton
-    Left = 438
-    Top = 168
+    Left = 430
+    Top = 232
     Width = 99
     Height = 38
     Action = DatasetCancel1
@@ -973,43 +975,67 @@ object frm_cadastro_responsaveis: Tfrm_cadastro_responsaveis
   end
   object Label1: TLabel
     Left = 40
-    Top = 32
-    Width = 27
-    Height = 13
+    Top = 29
+    Width = 46
+    Height = 19
     Caption = 'Nome'
     FocusControl = DBEdit1
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Constantia'
+    Font.Style = [fsBold]
+    ParentFont = False
   end
   object Label2: TLabel
     Left = 40
-    Top = 72
-    Width = 42
-    Height = 13
+    Top = 81
+    Width = 67
+    Height = 19
     Caption = 'Telefone'
     FocusControl = DBEdit2
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Constantia'
+    Font.Style = [fsBold]
+    ParentFont = False
   end
   object Label3: TLabel
     Left = 40
-    Top = 112
-    Width = 19
-    Height = 13
+    Top = 145
+    Width = 30
+    Height = 19
     Caption = 'CPF'
     FocusControl = DBEdit3
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Constantia'
+    Font.Style = [fsBold]
+    ParentFont = False
   end
   object DBGrid1: TDBGrid
     Left = 40
-    Top = 228
+    Top = 292
     Width = 481
     Height = 125
     Color = clWhite
     DataSource = dtm.ds_cadastro_responsaveis
     FixedColor = clWhite
     GradientEndColor = clWhite
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Constantia'
+    Font.Style = []
     Options = [dgTitles, dgIndicator, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+    ParentFont = False
     TabOrder = 0
-    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Charset = ANSI_CHARSET
     TitleFont.Color = clWindowText
-    TitleFont.Height = -11
-    TitleFont.Name = 'Tahoma'
+    TitleFont.Height = -13
+    TitleFont.Name = 'Constantia'
     TitleFont.Style = []
     Columns = <
       item
@@ -1018,12 +1044,12 @@ object frm_cadastro_responsaveis: Tfrm_cadastro_responsaveis
         FieldName = 'id'
         Title.Alignment = taCenter
         Title.Caption = 'C'#243'digo'
-        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Charset = ANSI_CHARSET
         Title.Font.Color = clWindowText
-        Title.Font.Height = -11
-        Title.Font.Name = 'Tahoma'
+        Title.Font.Height = -13
+        Title.Font.Name = 'Constantia'
         Title.Font.Style = [fsBold]
-        Width = 84
+        Width = 64
         Visible = True
       end
       item
@@ -1032,10 +1058,10 @@ object frm_cadastro_responsaveis: Tfrm_cadastro_responsaveis
         FieldName = 'nome'
         Title.Alignment = taCenter
         Title.Caption = 'Nome'
-        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Charset = ANSI_CHARSET
         Title.Font.Color = clWindowText
-        Title.Font.Height = -11
-        Title.Font.Name = 'Tahoma'
+        Title.Font.Height = -13
+        Title.Font.Name = 'Constantia'
         Title.Font.Style = [fsBold]
         Width = 148
         Visible = True
@@ -1045,10 +1071,10 @@ object frm_cadastro_responsaveis: Tfrm_cadastro_responsaveis
         FieldName = 'telefone'
         Title.Alignment = taCenter
         Title.Caption = 'Telefone'
-        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Charset = ANSI_CHARSET
         Title.Font.Color = clWindowText
-        Title.Font.Height = -11
-        Title.Font.Name = 'Tahoma'
+        Title.Font.Height = -13
+        Title.Font.Name = 'Constantia'
         Title.Font.Style = [fsBold]
         Width = 107
         Visible = True
@@ -1058,10 +1084,10 @@ object frm_cadastro_responsaveis: Tfrm_cadastro_responsaveis
         FieldName = 'cpf'
         Title.Alignment = taCenter
         Title.Caption = 'CPF'
-        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Charset = ANSI_CHARSET
         Title.Font.Color = clWindowText
-        Title.Font.Height = -11
-        Title.Font.Name = 'Tahoma'
+        Title.Font.Height = -13
+        Title.Font.Name = 'Constantia'
         Title.Font.Style = [fsBold]
         Width = 105
         Visible = True
@@ -1070,31 +1096,49 @@ object frm_cadastro_responsaveis: Tfrm_cadastro_responsaveis
   object DBEdit1: TDBEdit
     Left = 40
     Top = 48
-    Width = 160
-    Height = 21
+    Width = 193
+    Height = 27
     DataField = 'nome'
     DataSource = dtm.ds_cadastro_responsaveis
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Constantia'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 1
   end
   object DBEdit2: TDBEdit
     Left = 40
-    Top = 88
-    Width = 221
-    Height = 21
+    Top = 106
+    Width = 130
+    Height = 27
     DataField = 'telefone'
     DataSource = dtm.ds_cadastro_responsaveis
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Constantia'
+    Font.Style = []
     MaxLength = 14
+    ParentFont = False
     TabOrder = 2
     OnClick = DBEdit2Click
   end
   object DBEdit3: TDBEdit
     Left = 40
-    Top = 131
-    Width = 171
-    Height = 21
+    Top = 170
+    Width = 121
+    Height = 27
     DataField = 'cpf'
     DataSource = dtm.ds_cadastro_responsaveis
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Constantia'
+    Font.Style = []
     MaxLength = 14
+    ParentFont = False
     TabOrder = 3
     OnClick = DBEdit3Click
   end

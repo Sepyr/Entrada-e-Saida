@@ -1,6 +1,7 @@
 object frm_cadastrar_curso: Tfrm_cadastrar_curso
   Left = 0
   Top = 0
+  BorderIcons = [biSystemMenu]
   Caption = 'Cadastrar Cursos'
   ClientHeight = 386
   ClientWidth = 581
@@ -17,13 +18,13 @@ object frm_cadastrar_curso: Tfrm_cadastrar_curso
   object Label1: TLabel
     Left = 32
     Top = 40
-    Width = 53
-    Height = 23
+    Width = 45
+    Height = 19
     Caption = 'Curso'
     FocusControl = DBEdit1
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
-    Font.Height = -19
+    Font.Height = -16
     Font.Name = 'Constantia'
     Font.Style = [fsBold]
     ParentFont = False
@@ -637,6 +638,7 @@ object frm_cadastrar_curso: Tfrm_cadastrar_curso
       BAA9B4BAA9B4BAA9B4BAA9B4BAA9B4BAA9B4BAA9B4BAA9B4BAA8B5BAA8B5BAA8
       B5BAA8B5BCA8B5BCA8B5BCA8B5BCA8B5BCA8B5BCA8B5BCA8B5BCA8B50000}
     ParentFont = False
+    OnClick = SpeedButton3Click
   end
   object SpeedButton4: TSpeedButton
     Left = 341
@@ -989,9 +991,15 @@ object frm_cadastrar_curso: Tfrm_cadastrar_curso
     Left = 32
     Top = 69
     Width = 169
-    Height = 21
+    Height = 27
     DataField = 'curso'
     DataSource = dtm.ds_cadastro_curso
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Constantia'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 0
   end
   object DBGrid1: TDBGrid
@@ -1000,7 +1008,13 @@ object frm_cadastrar_curso: Tfrm_cadastrar_curso
     Width = 513
     Height = 145
     DataSource = dtm.ds_cadastro_curso
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Constantia'
+    Font.Style = []
     Options = [dgTitles, dgIndicator, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+    ParentFont = False
     TabOrder = 1
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
@@ -1013,10 +1027,10 @@ object frm_cadastrar_curso: Tfrm_cadastrar_curso
         FieldName = 'id'
         Title.Alignment = taCenter
         Title.Caption = 'C'#243'digo'
-        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Charset = ANSI_CHARSET
         Title.Font.Color = clWindowText
-        Title.Font.Height = -11
-        Title.Font.Name = 'Tahoma'
+        Title.Font.Height = -13
+        Title.Font.Name = 'Constantia'
         Title.Font.Style = [fsBold]
         Visible = True
       end
@@ -1025,10 +1039,10 @@ object frm_cadastrar_curso: Tfrm_cadastrar_curso
         FieldName = 'curso'
         Title.Alignment = taCenter
         Title.Caption = 'Curso'
-        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Charset = ANSI_CHARSET
         Title.Font.Color = clWindowText
-        Title.Font.Height = -11
-        Title.Font.Name = 'Tahoma'
+        Title.Font.Height = -13
+        Title.Font.Name = 'Constantia'
         Title.Font.Style = [fsBold]
         Visible = True
       end>

@@ -30,6 +30,7 @@ type
     DBEdit3: TDBEdit;
     procedure DBEdit2Click(Sender: TObject);
     procedure DBEdit3Click(Sender: TObject);
+    procedure SpeedButton3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -57,4 +58,12 @@ begin
   DBEdit3.SelStart:=0;
 end;
 
+procedure Tfrm_cadastro_responsaveis.SpeedButton3Click(Sender: TObject);
+begin
+if
+ messagedlg('Excluir o Registro?',mtWarning,[mbYes,mbNo],0) = mrYes Then
+begin
+  dtm.cadastro_responsaveis.delete;
+end;
+end;
 end.

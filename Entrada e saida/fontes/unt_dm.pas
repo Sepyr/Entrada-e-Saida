@@ -96,7 +96,18 @@ type
     view_respidresponsavel: TFDAutoIncField;
     view_respnome: TStringField;
     view_respgrau_de_parentesco: TStringField;
+    campo_turma: TFDQuery;
+    ds_campo_turma: TDataSource;
+    campo_turmaid: TFDAutoIncField;
+    campo_turmaTurma: TStringField;
+    busca_alunosmatricula: TIntegerField;
+    busca_alunosnome: TStringField;
+    busca_alunosTurma: TStringField;
     procedure cadastro_pedagogasBeforePost(DataSet: TDataSet);
+    procedure cadastro_responsaveisBeforePost(DataSet: TDataSet);
+    procedure cadastro_cursoBeforePost(DataSet: TDataSet);
+    procedure cadastro_turmasBeforePost(DataSet: TDataSet);
+    procedure cadastro_alunosBeforePost(DataSet: TDataSet);
   private
     { Private declarations }
   public
@@ -112,16 +123,55 @@ implementation
 
 {$R *.dfm}
 
+procedure Tdtm.cadastro_alunosBeforePost(DataSet: TDataSet);
+begin
+if dtm.cadastro_alunosmatricula.IsNull then
+raise Exception.Create('O campo Matricula não pode ficar em branco');
+if dtm.cadastro_alunosnome.IsNull then
+raise Exception.Create('O campo Nome não pode ficar em branco');
+if dtm.campo_turmaTurma.IsNull then
+raise Exception.Create('O campo Turma não pode ficar em branco');
+end;
+
+procedure Tdtm.cadastro_cursoBeforePost(DataSet: TDataSet);
+begin
+if dtm.cadastro_cursocurso.IsNull then
+raise Exception.Create('O campo Curso não pode ficar em branco');
+end;
+
 procedure Tdtm.cadastro_pedagogasBeforePost(DataSet: TDataSet);
 begin
 if dtm.cadastro_pedagogasnome.IsNull then
-raise Exception.Create('O campo nome não pode ficar em branco.');
+raise Exception.Create('O campo Nome não pode ficar em branco.');
 if dtm.cadastro_pedagogasusuario.IsNull then
-raise Exception.Create('O campo usuário não pode ficar em branco.');
+raise Exception.Create('O campo Usuário não pode ficar em branco.');
 if dtm.cadastro_pedagogassenha.IsNull then
-raise Exception.Create('O campo senha não pode ficar em branco.');
+raise Exception.Create('O campo Senha não pode ficar em branco.');
 
 end;
 
+
+procedure Tdtm.cadastro_responsaveisBeforePost(DataSet: TDataSet);
+begin
+if dtm.cadastro_responsaveisnome.IsNull then
+raise Exception.Create('O campo Nome não pode ficar em branco');
+if dtm.cadastro_responsaveiscpf.IsNull then
+raise Exception.Create('O campo CPF não pode ficar em branco');
+if dtm.cadastro_responsaveistelefone.IsNull then
+raise Exception.Create('O campo Telefone não pode ficar em branco');
+
+end;
+
+procedure Tdtm.cadastro_turmasBeforePost(DataSet: TDataSet);
+begin
+if dtm.cadastro_turmasserie.IsNull then
+raise Exception.Create('O campo Serie não pode ficar em branco');
+if dtm.cadastro_turmasturma.IsNull then
+raise Exception.Create('O campo Turma não pode ficar em branco');
+if dtm.cadastro_turmassala.IsNull then
+raise Exception.Create('O campo Sala não pode ficar em branco');
+if dtm.cadastro_turmasCurso.IsNull then
+raise Exception.Create('O campo Curso não pode ficar em branco');
+end;
 
 end.

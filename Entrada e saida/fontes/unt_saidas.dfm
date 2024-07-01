@@ -1,6 +1,7 @@
 object frm_saida: Tfrm_saida
   Left = 0
   Top = 0
+  BorderIcons = [biSystemMenu]
   Caption = 'Saida Adiantada'
   ClientHeight = 438
   ClientWidth = 722

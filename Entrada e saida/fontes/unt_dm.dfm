@@ -194,6 +194,7 @@ object dtm: Tdtm
   end
   object cadastro_responsaveis: TFDQuery
     Active = True
+    BeforePost = cadastro_responsaveisBeforePost
     Connection = conexao
     SQL.Strings = (
       'SELECT * FROM responsaveis')
@@ -237,6 +238,7 @@ object dtm: Tdtm
   end
   object cadastro_curso: TFDQuery
     Active = True
+    BeforePost = cadastro_cursoBeforePost
     Connection = conexao
     SQL.Strings = (
       'SELECT * FROM cursos')
@@ -264,6 +266,7 @@ object dtm: Tdtm
   end
   object cadastro_turmas: TFDQuery
     Active = True
+    BeforePost = cadastro_turmasBeforePost
     Connection = conexao
     SQL.Strings = (
       'SELECT * FROM turmas')
@@ -313,6 +316,7 @@ object dtm: Tdtm
   end
   object cadastro_alunos: TFDQuery
     Active = True
+    BeforePost = cadastro_alunosBeforePost
     Connection = conexao
     SQL.Strings = (
       'SELECT * FROM alunos')
@@ -469,14 +473,33 @@ object dtm: Tdtm
     Active = True
     Connection = conexao
     SQL.Strings = (
-      'SELECT * FROM alunos')
-    Left = 216
-    Top = 376
+      'SELECT * FROM aluno_turma')
+    Left = 120
+    Top = 480
+    object busca_alunosmatricula: TIntegerField
+      FieldName = 'matricula'
+      Origin = 'matricula'
+      Required = True
+    end
+    object busca_alunosnome: TStringField
+      FieldName = 'nome'
+      Origin = 'nome'
+      Required = True
+      Size = 80
+    end
+    object busca_alunosTurma: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'Turma'
+      Origin = 'Turma'
+      ProviderFlags = []
+      ReadOnly = True
+      Size = 69
+    end
   end
   object ds_busca_alunos1: TDataSource
     DataSet = busca_alunos
-    Left = 256
-    Top = 456
+    Left = 120
+    Top = 536
   end
   object view_resp: TFDQuery
     Active = True
@@ -488,6 +511,7 @@ object dtm: Tdtm
     object view_respid: TFDAutoIncField
       FieldName = 'id'
       Origin = 'id'
+      ReadOnly = True
     end
     object view_respmatricula: TIntegerField
       FieldName = 'matricula'
@@ -503,6 +527,7 @@ object dtm: Tdtm
     object view_respidresponsavel: TFDAutoIncField
       FieldName = 'id responsavel'
       Origin = '`id responsavel`'
+      ReadOnly = True
     end
     object view_respnome: TStringField
       FieldName = 'nome'
@@ -522,5 +547,34 @@ object dtm: Tdtm
     DataSet = view_resp
     Left = 416
     Top = 528
+  end
+  object campo_turma: TFDQuery
+    Active = True
+    Connection = conexao
+    SQL.Strings = (
+      
+        'SELECT turmas.id, concat(turmas.serie,'#39#170' '#39', turmas.turma,'#39' '#39', cu' +
+        'rsos.curso) AS Turma FROM turmas, cursos where turmas.curso = cu' +
+        'rsos.id')
+    Left = 592
+    Top = 472
+    object campo_turmaid: TFDAutoIncField
+      FieldName = 'id'
+      Origin = 'id'
+      ProviderFlags = [pfInWhere, pfInKey]
+    end
+    object campo_turmaTurma: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'Turma'
+      Origin = 'Turma'
+      ProviderFlags = []
+      ReadOnly = True
+      Size = 69
+    end
+  end
+  object ds_campo_turma: TDataSource
+    DataSet = campo_turma
+    Left = 592
+    Top = 560
   end
 end

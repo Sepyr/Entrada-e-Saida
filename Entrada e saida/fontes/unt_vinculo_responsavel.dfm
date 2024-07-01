@@ -1,6 +1,7 @@
 object frm_vinculo_responsavel: Tfrm_vinculo_responsavel
   Left = 0
   Top = 0
+  BorderIcons = [biSystemMenu]
   Caption = 'Vincular Respons'#225'vel'
   ClientHeight = 620
   ClientWidth = 837
