@@ -11,6 +11,7 @@ object frm_inicio: Tfrm_inicio
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
+  Menu = MainMenu1
   OldCreateOrder = False
   Position = poDesktopCenter
   OnClose = FormClose
@@ -33467,5 +33468,13 @@ object frm_inicio: Tfrm_inicio
       A8B6BCA8B6BCA8B6BCA8B6BCA8B6BCA8B6BCA8B6BCA8B6BCA8B6BCA8B6BCA8B6
       BCA8B6BCA8B6BCA8B6BCA8B6BCA8B6000000}
     Stretch = True
+  end
+  object MainMenu1: TMainMenu
+    Left = 72
+    Top = 96
+    object Sobre1: TMenuItem
+      Caption = 'Sobre'
+      OnClick = Sobre1Click
+    end
   end
 end

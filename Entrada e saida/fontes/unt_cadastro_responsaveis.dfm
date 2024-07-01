@@ -4,7 +4,7 @@ object frm_cadastro_responsaveis: Tfrm_cadastro_responsaveis
   BorderIcons = [biSystemMenu]
   Caption = 'Cadastro Respons'#225'veis'
   ClientHeight = 453
-  ClientWidth = 562
+  ClientWidth = 568
   Color = 12363958
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

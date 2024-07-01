@@ -1050,7 +1050,7 @@ object frm_cadastroaluno: Tfrm_cadastroaluno
   object DBGrid1: TDBGrid
     Left = 32
     Top = 301
-    Width = 713
+    Width = 729
     Height = 120
     DataSource = dtm.ds_cadastro_alunos
     Font.Charset = ANSI_CHARSET

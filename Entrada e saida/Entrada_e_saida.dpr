@@ -13,15 +13,16 @@ uses
   unt_cadastro_responsaveis in 'fontes\unt_cadastro_responsaveis.pas' {frm_cadastro_responsaveis},
   unt_cadastro_cursos in 'fontes\unt_cadastro_cursos.pas' {frm_cadastrar_curso},
   unt_cadastro_turmas in 'fontes\unt_cadastro_turmas.pas' {frm_cadastro_turmas},
-  unt_vinculo_responsavel in 'fontes\unt_vinculo_responsavel.pas' {frm_vinculo_responsavel};
+  unt_vinculo_responsavel in 'fontes\unt_vinculo_responsavel.pas' {frm_vinculo_responsavel},
+  unt_sobre in 'fontes\unt_sobre.pas' {frm_sobre};
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(Tfrm_adm, frm_adm);
   Application.CreateForm(Tfrm_inicio, frm_inicio);
+  Application.CreateForm(Tfrm_adm, frm_adm);
   Application.CreateForm(Tfrm_cadastro_pedagogas, frm_cadastro_pedagogas);
   Application.CreateForm(Tfrm_cadastroaluno, frm_cadastroaluno);
   Application.CreateForm(Tfrm_cadastro_responsaveis, frm_cadastro_responsaveis);
@@ -31,5 +32,6 @@ begin
   Application.CreateForm(Tfrm_cadastrar_curso, frm_cadastrar_curso);
   Application.CreateForm(Tfrm_cadastro_turmas, frm_cadastro_turmas);
   Application.CreateForm(Tfrm_login, frm_login);
+  Application.CreateForm(Tfrm_sobre, frm_sobre);
   Application.Run;
 end.

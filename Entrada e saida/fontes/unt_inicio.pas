@@ -4,7 +4,7 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Buttons, Vcl.ExtCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Buttons, Vcl.ExtCtrls, Vcl.Menus;
 
 type
   Tfrm_inicio = class(TForm)
@@ -14,10 +14,13 @@ type
     Image2: TImage;
     SpeedButton3: TSpeedButton;
     Image3: TImage;
+    MainMenu1: TMainMenu;
+    Sobre1: TMenuItem;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure SpeedButton2Click(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
     procedure SpeedButton3Click(Sender: TObject);
+    procedure Sobre1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -31,12 +34,17 @@ implementation
 
 {$R *.dfm}
 
-uses unt_login, unt_atrasos, unt_saidas, unt_cadastro_alunos;
+uses unt_login, unt_atrasos, unt_saidas, unt_cadastro_alunos, unt_sobre;
 
 procedure Tfrm_inicio.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
 frm_login.visible:=TRUE;
 frm_login.Show;
+end;
+
+procedure Tfrm_inicio.Sobre1Click(Sender: TObject);
+begin
+frm_sobre.Show;
 end;
 
 procedure Tfrm_inicio.SpeedButton1Click(Sender: TObject);
