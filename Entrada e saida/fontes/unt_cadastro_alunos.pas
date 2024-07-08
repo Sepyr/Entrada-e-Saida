@@ -22,7 +22,7 @@ type
     SpeedButton4: TSpeedButton;
     SpeedButton5: TSpeedButton;
     SpeedButton6: TSpeedButton;
-    DBGrid1: TDBGrid;
+    da: TDBGrid;
     DatasetInsert1: TDataSetInsert;
     DatasetDelete1: TDataSetDelete;
     DatasetEdit1: TDataSetEdit;
@@ -38,7 +38,7 @@ type
     procedure SpeedButton6Click(Sender: TObject);
     procedure edt_busca_alunosChange(Sender: TObject);
     procedure btn_editarClick(Sender: TObject);
-    procedure DBGrid1CellClick(Column: TColumn);
+    procedure daCellClick(Column: TColumn);
   private
     { Private declarations }
   public
@@ -56,7 +56,7 @@ implementation
 
 uses unt_cadastro_responsaveis, unt_dm, unt_vinculo_responsavel;
 
-procedure Tfrm_cadastroaluno.DBGrid1CellClick(Column: TColumn);
+procedure Tfrm_cadastroaluno.daCellClick(Column: TColumn);
 begin
 aluno:= dtm.cadastro_alunosmatricula.Value;
 nome_aluno:= dtm.cadastro_alunosnome.Value;
@@ -66,22 +66,22 @@ procedure Tfrm_cadastroaluno.edt_busca_alunosChange(Sender: TObject);
 begin
 if Length(edt_busca_alunos.Text)>0 then
 begin
-  with dtm.busca_alunos do
+  with dtm.cadastro_alunos do
   begin
     close;
     sql.Clear;
-    sql.Add('Select * from aluno_turma WHERE nome like :nome');
+    sql.Add('Select * from alunos WHERE nome like :nome');
     ParamByName('nome').Value:='%'+edt_busca_alunos.Text+'%';
     Open();
   end;
 end
 else
 begin
-     with dtm.busca_alunos do
+     with dtm.cadastro_alunos do
   begin
     close;
     sql.Clear;
-    sql.Add('SELECT * from aluno_turma');
+    sql.Add('SELECT * from alunos');
     Open();
   end;
 end;

@@ -21,16 +21,19 @@ type
     DatasetEdit1: TDataSetEdit;
     DatasetPost1: TDataSetPost;
     DatasetCancel1: TDataSetCancel;
-    DBGrid1: TDBGrid;
     Label1: TLabel;
     DBEdit1: TDBEdit;
     Label2: TLabel;
     DBEdit2: TDBEdit;
     Label3: TLabel;
     DBEdit3: TDBEdit;
+    DBGrid1: TDBGrid;
+    edt_busca_responsaveis: TEdit;
+    Label4: TLabel;
     procedure DBEdit2Click(Sender: TObject);
     procedure DBEdit3Click(Sender: TObject);
     procedure SpeedButton3Click(Sender: TObject);
+    procedure edt_busca_responsaveisChange(Sender: TObject);
   private
     { Private declarations }
   public
@@ -56,6 +59,31 @@ end;
 procedure Tfrm_cadastro_responsaveis.DBEdit3Click(Sender: TObject);
 begin
   DBEdit3.SelStart:=0;
+end;
+
+procedure Tfrm_cadastro_responsaveis.edt_busca_responsaveisChange(Sender: TObject);
+begin
+if Length(edt_busca_responsaveis.Text)>0 then
+begin
+  with dtm.cadastro_responsaveis do
+  begin
+    close;
+    sql.Clear;
+    sql.Add('Select * from responsaveis WHERE nome like :nome');
+    ParamByName('nome').Value:='%'+edt_busca_responsaveis.Text+'%';
+    Open();
+  end;
+end
+else
+begin
+     with dtm.cadastro_responsaveis do
+  begin
+    close;
+    sql.Clear;
+    sql.Add('SELECT * from responsaveis');
+    Open();
+  end;
+end;
 end;
 
 procedure Tfrm_cadastro_responsaveis.SpeedButton3Click(Sender: TObject);

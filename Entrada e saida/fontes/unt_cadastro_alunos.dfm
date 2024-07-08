@@ -1047,8 +1047,8 @@ object frm_cadastroaluno: Tfrm_cadastroaluno
     ParentFont = False
     TabOrder = 1
   end
-  object DBGrid1: TDBGrid
-    Left = 32
+  object da: TDBGrid
+    Left = 33
     Top = 301
     Width = 729
     Height = 120
@@ -1066,7 +1066,7 @@ object frm_cadastroaluno: Tfrm_cadastroaluno
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
-    OnCellClick = DBGrid1CellClick
+    OnCellClick = daCellClick
     Columns = <
       item
         Alignment = taCenter

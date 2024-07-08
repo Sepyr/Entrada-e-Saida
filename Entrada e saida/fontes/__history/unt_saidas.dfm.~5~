@@ -1,0 +1,95 @@
+object frm_saida: Tfrm_saida
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu]
+  Caption = 'Saida Adiantada'
+  ClientHeight = 438
+  ClientWidth = 722
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 112
+    Top = 242
+    Width = 55
+    Height = 13
+    Caption = 'justificativa'
+    FocusControl = DBEdit1
+  end
+  object Label2: TLabel
+    Left = 80
+    Top = 48
+    Width = 27
+    Height = 13
+    Caption = 'Aluno'
+    FocusControl = DBEdit2
+  end
+  object SpeedButton1: TSpeedButton
+    Left = 312
+    Top = 312
+    Width = 153
+    Height = 65
+    Action = DatasetPost1
+    Caption = 'Salvar'
+  end
+  object DBEdit1: TDBEdit
+    Left = 112
+    Top = 261
+    Width = 167
+    Height = 116
+    DataField = 'justificativa'
+    DataSource = dtm.ds_entrada_atrasada
+    TabOrder = 0
+  end
+  object DBEdit2: TDBEdit
+    Left = 80
+    Top = 67
+    Width = 169
+    Height = 21
+    DataField = 'Aluno'
+    DataSource = dtm.ds_entrada_atrasada
+    TabOrder = 1
+  end
+  object DBGrid1: TDBGrid
+    Left = 80
+    Top = 104
+    Width = 320
+    Height = 73
+    TabOrder = 2
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+  end
+  object DBLookupComboBox1: TDBLookupComboBox
+    Left = 296
+    Top = 232
+    Width = 145
+    Height = 21
+    DataField = 'nome'
+    DataSource = dtm.ds_cadastro_alunos
+    KeyField = 'Aluno'
+    ListField = 'Aluno'
+    ListSource = dtm.ds_saidas
+    TabOrder = 3
+  end
+  object ActionManager1: TActionManager
+    Left = 616
+    Top = 64
+    StyleName = 'Platform Default'
+    object DatasetPost1: TDataSetPost
+      Category = 'Dataset'
+      Caption = 'P&ost'
+      Hint = 'Post'
+      ImageIndex = 7
+    end
+  end
+end

@@ -20,6 +20,7 @@ type
     { Private declarations }
   public
     { Public declarations }
+    var pedagoga : Integer;
   end;
 
 var
@@ -49,6 +50,7 @@ begin
     open;
    if(RecordCount)>0 then
    begin
+   pedagoga:= dtm.loginid.Value;
            if dtm.loginusuario.value='ADMINISTRADOR' then
            begin
              frm_adm.Show;

@@ -107,13 +107,12 @@ object dtm: Tdtm
     Connection = conexao
     SQL.Strings = (
       'SELECT * FROM saidas')
-    Left = 272
-    Top = 120
+    Left = 56
+    Top = 272
     object saidasid: TFDAutoIncField
       FieldName = 'id'
       Origin = 'id'
       ProviderFlags = [pfInWhere, pfInKey]
-      ReadOnly = True
     end
     object saidasdata: TDateField
       FieldName = 'data'
@@ -141,11 +140,16 @@ object dtm: Tdtm
       Origin = 'Pedagoga'
       Required = True
     end
+    object saidastempo_adiantado: TTimeField
+      FieldName = 'tempo_adiantado'
+      Origin = 'tempo_adiantado'
+      Required = True
+    end
   end
   object ds_saidas: TDataSource
     DataSet = saidas
-    Left = 272
-    Top = 184
+    Left = 56
+    Top = 336
   end
   object entradas: TFDQuery
     Active = True
@@ -158,7 +162,6 @@ object dtm: Tdtm
       FieldName = 'id'
       Origin = 'id'
       ProviderFlags = [pfInWhere, pfInKey]
-      ReadOnly = True
     end
     object entradasdata: TDateField
       FieldName = 'data'
@@ -184,6 +187,11 @@ object dtm: Tdtm
     object entradasPedagoga: TIntegerField
       FieldName = 'Pedagoga'
       Origin = 'Pedagoga'
+      Required = True
+    end
+    object entradastempo_atraso: TTimeField
+      FieldName = 'tempo_atraso'
+      Origin = 'tempo_atraso'
       Required = True
     end
   end
@@ -223,12 +231,12 @@ object dtm: Tdtm
       ReadOnly = True
     end
     object cadastro_responsaveiscpf: TStringField
-      DisplayWidth = 13
+      DisplayWidth = 15
       FieldName = 'cpf'
       Origin = 'cpf'
       Required = True
-      EditMask = '000\-000\-000\-00;1;_'
-      Size = 11
+      EditMask = '000\.000\.000\-00;1;_'
+      Size = 15
     end
   end
   object ds_cadastro_responsaveis: TDataSource
@@ -424,51 +432,6 @@ object dtm: Tdtm
     Left = 760
     Top = 360
   end
-  object entrada_atrasada: TFDQuery
-    Active = True
-    Connection = conexao
-    SQL.Strings = (
-      'SELECT * FROM entradas')
-    Left = 64
-    Top = 312
-    object entrada_atrasadaid: TFDAutoIncField
-      FieldName = 'id'
-      Origin = 'id'
-      ProviderFlags = [pfInWhere, pfInKey]
-      ReadOnly = True
-    end
-    object entrada_atrasadadata: TDateField
-      FieldName = 'data'
-      Origin = '`data`'
-      Required = True
-    end
-    object entrada_atrasadahorario: TTimeField
-      FieldName = 'horario'
-      Origin = 'horario'
-      Required = True
-    end
-    object entrada_atrasadajustificativa: TStringField
-      AutoGenerateValue = arDefault
-      FieldName = 'justificativa'
-      Origin = 'justificativa'
-      Size = 255
-    end
-    object entrada_atrasadaAluno: TIntegerField
-      FieldName = 'Aluno'
-      Origin = 'Aluno'
-      Required = True
-    end
-    object entrada_atrasadaPedagoga: TIntegerField
-      FieldName = 'Pedagoga'
-      Origin = 'Pedagoga'
-      Required = True
-    end
-  end
-  object ds_entrada_atrasada: TDataSource
-    DataSet = entrada_atrasada
-    Left = 64
-    Top = 408
-  end
   object busca_alunos: TFDQuery
     Active = True
     Connection = conexao
@@ -477,11 +440,13 @@ object dtm: Tdtm
     Left = 120
     Top = 480
     object busca_alunosmatricula: TIntegerField
+      DisplayWidth = 15
       FieldName = 'matricula'
       Origin = 'matricula'
       Required = True
     end
     object busca_alunosnome: TStringField
+      DisplayWidth = 21
       FieldName = 'nome'
       Origin = 'nome'
       Required = True
@@ -489,6 +454,7 @@ object dtm: Tdtm
     end
     object busca_alunosTurma: TStringField
       AutoGenerateValue = arDefault
+      DisplayWidth = 36
       FieldName = 'Turma'
       Origin = 'Turma'
       ProviderFlags = []
@@ -506,8 +472,8 @@ object dtm: Tdtm
     Connection = conexao
     SQL.Strings = (
       'select * from resp;')
-    Left = 408
-    Top = 464
+    Left = 296
+    Top = 440
     object view_respid: TFDAutoIncField
       FieldName = 'id'
       Origin = 'id'
@@ -545,8 +511,8 @@ object dtm: Tdtm
   end
   object ds_view_resp: TDataSource
     DataSet = view_resp
-    Left = 416
-    Top = 528
+    Left = 304
+    Top = 504
   end
   object campo_turma: TFDQuery
     Active = True
@@ -562,6 +528,7 @@ object dtm: Tdtm
       FieldName = 'id'
       Origin = 'id'
       ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
     end
     object campo_turmaTurma: TStringField
       AutoGenerateValue = arDefault
